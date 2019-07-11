@@ -1,0 +1,231 @@
+/* DivTable.com */
+
+/* divTableBasic */
+.divTableBasic{
+	display: table;
+	width: 100%;
+}
+.divTableBasicRow {
+	display: table-row;
+}
+.divTableBasicHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableBasicCell, .divTableBasicHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableBasicCellNoBord {
+/* border: 1px solid #999999; */
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableBasicHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableBasicFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBasicBody {
+	display: table-row-group;
+}
+
+/* blueTable */
+
+div.blueTable {
+	border: 1px solid #1C6EA4;
+	/*	background-color: #EEEEEE; */
+
+	background-color: #FFFFFF;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+.divTable.blueTable .divTableCell, .divTable.blueTable .divTableHead {
+	border: 1px solid #AAAAAA;
+	padding: 4px 4px;
+}
+.divTable.blueTable .divTableBody .divTableCell {
+/*  font-size: 16px; ---- use tbl_data*/
+}
+.divTable.blueTable .divTableRow:nth-child(even) {
+	/*	background: #D0E4F5;
+EEEEEE
+*/
+	background: #FFFFFF;
+}
+.divTable.blueTable .divTableHeading {
+	/*
+*background: EEEEEE;
+
+background: #EEEEEE;
+*/
+
+	background: #EEEEEE;
+	/*background: #1C6EA4;
+
+//color: #1C6EA4; nah
+
+background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+*/
+	border-bottom: 2px solid #444444;
+}
+.divTable.blueTable .divTableHeading .divTableHead {
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+	border-left: 2px solid #D0E4F5;
+}
+.divTable.blueTable .divTableHeading .divTableHead:first-child {
+	border-left: none;
+}
+.blueTable .tableFootStyle {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background: #D0E4F5;
+	background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+	background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+	background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+	border-top: 2px solid #444444;
+}
+.blueTable .tableFootStyle {
+	font-size: 14px;
+}
+.blueTable .tableFootStyle .links {
+	text-align: right;
+}
+.blueTable .tableFootStyle .links a {
+	display: inline-block;
+	background: #1C6EA4;
+	color: #FFFFFF;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
+.blueTable.outerTableFooter {
+	border-top: none;
+}
+.blueTable.outerTableFooter .tableFootStyle {
+	padding: 3px 5px;
+}
+/* DivTable.com */
+.divTable {
+	display: table;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	display: table-cell;
+}
+.divTableCell2 {
+	display: table-cell;
+}
+
+
+.divTableHeading {
+	display: table-header-group;
+}
+.divTableFoot {
+	display: table-footer-group;
+}
+.divTableBody {
+	display: table-row-group;
+}
+.divTableCell_rev1 {
+/* font-size: 26px;	nahhhhhhh	me extra try*/
+
+}	
+
+
+/*using*/
+.tbl_label {
+		font-size: 14px;
+	background: #EEEEEE; /*	*/
+	text-align: right;
+	width: 120px;
+}
+.tbl_label2 {
+	background: #EEEEEE; /*	*/
+	text-align: left;
+	width: 120px;
+}
+.tbl_label3 {
+	background: #EEEEEE; /*	*/
+	text-align: left;
+	width: 80px;
+}
+.tbl_label4 {
+	background: #EEEEEE; /* nah width: 80px;	*/
+	text-align: left;
+}
+.tbl_label_edit {
+	background: #EEEEEE; /*	*/
+	text-align: left;
+	width: 44px;
+}
+.tbl_data {
+	/* font-size: 26px !important; */
+	font-size: 16px;
+	font-weight: bold;
+	padding: 2px 8px;
+}
+.tbl_data2 {
+	/* sammmmmme? font-size: 26px !important; */
+	font-size: 16px;
+	font-weight: bold;
+	padding: 2px 8px;
+}
+.tbl_data3 {
+	/* w BK sammmmmme? font-size: 26px !important; */
+	background: #EEEEEE;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 2px 8px;
+}
+.bk1 {
+	background: #88ade8;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px;	*/
+}
+.bk2 {
+	background: #5179ba;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px; 5179ba	*/
+}
+.bk3 {
+	background: #ba505d;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px; 5179ba	*/
+}
+
+.widebox1xx {
+margin-left: 10%;
+margin-right: 10%;
+background: #F597CC;
+	
+/*
+	
+	background: #F5F5F5; yoooooooo
+	background: #E9E9F5;
+background="pics/bk3.jpg;
+display: table-footer-group;
+padding: 3px 5px;
+*/
+}
+
+.wide1 {
+margin-left: 25%;
+margin-right: 25%;
+background: #CDE8F0;
+}
+
+

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Participate In Program post accident form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+<link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+<link href="mob.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.textread {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #333;
+	text-align: left;
+	display: block;
+	background-color: #FFF;
+	margin-top: 2px;
+	margin-right: 22px;
+	margin-bottom: 2px;
+	margin-left: 22px;
+}
+.boxsmall {
+	width: 50%;
+}
+</style>
+</head>
+<body>
+<div data-role="header" data-position="fixed" data-theme="a">
+  <div class="box1 center1 boxblue" > <a href="dashboard.html" rel="external"><img src="pics/appbanner-320x60-home1.png" width="320" height="61" class="center" alt=""></a> </div>
+</div>
+<!-- /header -->
+
+<section id="page01111" data-role="page">
+  <div role="main" class="ui-content">
+    <div class="content" >
+      <div class="box1 center1" > 
+        
+        <!--INSERT START -->
+        
+        <div align="left" class="textread"> 
+          <!--          <p></p>-->
+          <div align="center">
+            <h3> Post Accident Form<br>
+            </h3>
+            <strong> Did you have an accident? <br>
+            <br>
+            <table width="75%" border="0" cellspacing="2" cellpadding="2">
+              <tr>
+                <td><!--<ul>
+
+<li>A breath alcohol test should be done within two hours and not later than eight hours after an event.</li>
+<br>
+<li>A urine drug test should be done within 32 hours after the event.</li>
+
+
+</ul> --></td>
+              </tr>
+            </table>
+            </strong> </div>
+          <p> <strong> <span id="firstname"></span> <span id="lastname"></span> </strong> </p>
+          <strong>
+			  
+			  
+<!--
+			  sh kaksjd jas dhjak
+			  
+-->
+			  <span id="test2"></span>
+			  
+			  
+			  
+			  <div id="paform">
+			  
+<!--
+			  1111111111111111111111
+				  
+				  7368467867823
+			  
+-->
+			 
+				   
+			  
+			  
+			  
+          <form action="" method="post" name="thisform" id="thisform">
+            
+            <!-- 
+rel="external" -->
+            
+            <table border="0" align="center" cellpadding="2" cellspacing="2">
+              <tr>
+                <td width="25" align="left" valign="top" >YES <br>
+                  <br>
+                  NO </td>
+                <td width="100" align="left" valign="top" ><input id="accident" type="radio" name="accident" value="yes">
+                  <br>
+                  <br>
+                  <input id="accident" type="radio" name="accident" value="no"></td>
+                <td align="left" valign="top" ><input type="button" class="buttonform2_24" name="submit" value= " - Continue - " onClick="testResults(this.form)" />
+                  
+                  <!--
+
+rel="external" 
+
+<input rel="external" type="button" class="buttonform2_24" name="submit" value= " - Continue - " onClick="testResults(this.form)" />
+ --></td>
+              </tr>
+            </table>
+          </form>
+				  
+				   </div>
+			  
+				  
+				  
+				  
+				  
+          </strong> <br>
+          <br>
+          <table width="75%" border="0" align="center" cellpadding="2" cellspacing="2">
+            <tr>
+              <td align="left"><strong>DOT Definition of a Motor Accident on a Road or Highway</strong><br>
+                <div align="left">
+                  <ul>
+                    <li><strong>1. Death of a human being. </strong></li>
+                    <strong><br>
+                    </strong>
+                    <li><strong>2. Injury that must be treated away from the scene. </strong></li>
+                    <strong><br>
+                    </strong>
+                    <li><strong>3. An Accident in which any vehicle is towed away because it can not operate. </strong></li>
+                    <strong><br>
+                    </strong>
+                    <li><strong>4. Operator receives a citation as a result of the accident </strong></li>
+                    
+                    <!--<strong><br>
+<br>
+</strong> -->
+                    
+                    <h3>Had an accident?</h3>
+                    
+                    <!--<span class="print_data_22"></span><br><br> -->
+                    
+                    <li><strong> A breath alcohol test should be done within 2 hours and not later than 8 hours after the accident.<br>
+                      <br>
+                      </strong></li>
+                    <li><strong> A urine drug test should be done within 32 hours after the accident. </strong></li>
+                  </ul>
+                </div></td>
+            </tr>
+          </table>
+          <script>
+
+// complex workaround just for radio buttons in safari
+// new up date radio buttons and local storage
+	window.onload=function() {
+  var radios = document.getElementsByName('accident');
+  for (var i=0;i<radios.length;i++) {
+    radios[i].onclick=function() {
+      //alert(this.value);
+	  
+	  if (this.value == "yes")
+	  {
+		// just set LS here
+		//alert("yuup " +this.value);
+		localStorage.setItem("postaccident", 'yes');
+		var postaccdate = new Date();
+		localStorage.setItem('postaccdate', postaccdate);
+		// no windows here window.location.replace("collector-notice.html");	
+
+		}else{
+		//alert("noppppe  " +this.value); 
+		localStorage.setItem("postaccident", '');
+		localStorage.setItem('postaccdate', '');	
+		// no windows here window.location.replace("dashboard.html");
+
+		}
+    }
+  }
+
+}
+	// end radio
+
+</script> 
+          <script>
+
+// look seems to always say on even if not checked
+
+function testResults (form) {
+	
+if ( localStorage.getItem("postaccident") == "yes"){
+
+
+	window.location.replace("collector-notice.html");	
+	}else{
+	window.location.replace("dashboard.html");
+	}	
+
+}
+</script> 
+        </div>
+        <!-- end .left --> 
+		  
+<script>
+
+//document.getElementById('test2').textContent = 'cl_toc_annual_only is ' + localStorage.getItem("cl_toc_annual_only");
+
+if ( localStorage.getItem("cl_toc_annual_only") == '1' ){
+
+$("#paform").show(2000);
+$("#paform").hide(5000);
+	
+	
+//$("#alctext1").show(5000);
+//$("#alctext1").hide(5000);	
+	
+
+}
+</script> 
+		  
+		  
+        
+        <!--INSERT END --> 
+        
+      </div>
+      <!-- end .box --> 
+    </div>
+    <!-- end .content --> 
+  </div>
+  <!-- /ui-content --> 
+  
+</section>
+<!-- /page --> 
+<!--
+<footer data-role="footer" class="ui-barNAH" data-position="fixed" data-theme="a">
+<div class="ui-grid-c boxblue">
+foot
+</div>
+</footer> --> 
+
+<!-- /footer -->
+
+</body>
+</html>

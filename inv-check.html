@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Participate In Program Inv check</title>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+    <link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+    <link href="mob.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+<div data-role="header" data-position="fixed" data-theme="a"> 
+      <!--add header --> 
+    </div>
+
+<!-- /header -->
+
+<section id="page01111" data-role="page">
+      <div role="main" class="ui-content">
+    <div class="content" >
+          <div class="box1 center1" > 
+        
+        <!--INSERT START --> 
+        
+       
+        <!--INSERT END --> 
+        
+      </div>
+          <!-- end .box --> 
+        </div>
+    <!-- end .content --> 
+  </div>
+      <!-- /ui-content --> 
+      
+    </section>
+<!-- /page -->
+
+<footer data-role="footer" class="ui-barNAH" data-position="fixed" data-theme="a">
+      <div class="ui-grid-c boxblue"> 
+    <!--add footer --> 
+  </div>
+    </footer>
+
+<!-- /footer -->
+
+</body>
+</html>
+
+
+        <script LANGUAGE="JavaScript">
+
+
+
+$(document).ready(function(){
+	
+	
+// keep for now
+localStorage.setItem("last_invoice", "nothing");	
+
+lastcheck_test = new Date();
+localStorage.setItem('lastcheck_test', lastcheck_test);
+
+//document.getElementById('lastcheck_test').textContent = localStorage.getItem("lastcheck_test");
+	
+var Client_ID  = localStorage.getItem("Client_ID");
+var webpass = localStorage.getItem("cl_emp_Drivers_License_No");
+var socialsec  = localStorage.getItem("cl_emp_Social_Security");
+//new 2019
+var empid  = localStorage.getItem("cl_emp_Employee_ID_Num");	
+	
+	
+//$.post('https://participateinprogram.com/app-data/inv-check-js.php', { 	
+	
+$.post('https://participateinprogram.com/app-data/get-last-inv-js.php', { 
+		
+Client_ID: Client_ID, 
+		},
+
+function(data, status){
+	
+	
+// rev will keep this for now for dashboard
+localStorage.setItem("last_invoice", "InvoiceFound");	
+	
+	
+console.log ('data', data);
+output = "";
+	
+//rev the loop will only keep the last one found which will work good
+
+$.each(data, function(key, value) {
+console. log ('item', key, value);
+
+localStorage.setItem("invoice_id", value.invoice_id);
+localStorage.setItem("invoice_date", value.invoice_date);
+localStorage.setItem("invoice_current", value.invoice_current);
+localStorage.setItem("invoice_total", value.invoice_total);
+localStorage.setItem("invoice_due", value.invoice_due);
+	
+	
+});
+
+
+//rev last_invoice not great but works - better may be JS result not text
+//alert("data is "+ data.trim());	
+
+//console.log("data is " + data.trim());
+// nahhhhhhhhhhhhhhhhhhhhhhhhh localStorage.setItem("last_invoice", data);
+
+	//window.location.replace("dashboard.html");
+	var tm = new Date().getTime();
+	/// real bak soon 
+	window.location.replace("get_panelchoices.html?new=" + tm);
+
+});
+
+})
+
+</script> 
+        

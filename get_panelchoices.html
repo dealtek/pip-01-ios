@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>get panel</title>
+	
+	    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+<script id="start-post">
+
+
+testcheckin ();	
+
+
+
+function testcheckin () {
+	//clear
+localStorage.setItem("ev_pan_num", "");	
+localStorage.setItem("ev_TestType", "");
+localStorage.setItem("ev_desc", "");
+localStorage.setItem("ev_desc_short", "");	
+localStorage.setItem("ev_test", "");
+localStorage.setItem("ev_price", "");		
+	
+
+	
+$.post('https://participateinprogram.com/app-data/get-testchoices.php', { 
+owner_id: localStorage.getItem("cl_toc_owner_Client_ID"),	
+}, function(data){
+
+
+if(data == "nothing"){
+console. log ('nothing thedata', data);
+
+//var output = ''; // just make 1
+var output = 'No Recent Tests'; // just make 1
+//var output = ' or nothing here nothing found. You do not need a test today.'; // just make 1
+
+//yes to refresh
+//$('#list_events').html( output );
+//document.getElementById('test1').textContent = localStorage.getItem("TestType");
+}else{
+console. log ('yum thedata', data);
+
+$.each(data, function(key, value) {
+console. log ('item', key, value);
+
+
+//	
+//localStorage.setItem("panel_id", value.Number);
+//
+//localStorage.setItem("panel_price", value.Price);
+//localStorage.setItem("panel_Description_short", value.Description_short);
+//
+//localStorage.setItem("panel_Description", value.Description);
+//localStorage.setItem("panel_id", value.Number);
+
+//dupessss  fixxxxxxxxxxxxxxxxxx
+//localStorage.setItem("ev_id", value.Number);
+	
+
+// rev 2 fields for same thing make just one soon ev_test and ev_TestType from probation
+localStorage.setItem("ev_test", value.Test);
+localStorage.setItem("ev_TestType", value.Test);
+	
+localStorage.setItem("ev_pan_num", value.Number);	
+localStorage.setItem("ev_price", value.Price);
+localStorage.setItem("ev_desc", value.Description);
+localStorage.setItem("ev_desc_short", value.Description_short);	
+	
+	
+var tm = new Date().getTime();
+	
+//
+window.location.replace("dashboard.html?new=" + tm);	
+
+
+});
+
+
+}// end if data
+
+
+}).fail(function() {
+
+// just in case posting your form failed
+alert( "Posting failed." );
+
+// console. log ('thedatafail', data);
+
+
+});
+
+	//???
+//window.location.replace("dashboard.html?new=" + tm);	
+// to prevent refreshing the whole page page
+return false;
+
+
+}
+</script> 
+
+

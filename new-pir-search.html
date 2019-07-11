@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <title>Participate In Program new pir search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+    <link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+    <link href="mob.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+<div data-role="header" data-position="fixed" data-theme="a">
+      <div class="box1 center1 boxblue" > <a href="dashboard.html" rel="external"><img src="pics/appbanner-320x60-home1.png" width="320" height="61" class="center" alt=""></a> </div>
+      <!--add header --> 
+    </div>
+
+<!-- /header -->
+
+<section id="page01111" data-role="page">
+      <div role="main" class="ui-content">
+    <div class="content" >
+          <div class="box1 center1" > 
+        
+        <!--INSERT START -->
+        
+        <div id="response"></div>
+        <div id="theresult"></div>
+        New Client Search<br>
+        <br>
+        <div id="showlink1"> <span class="print_data_22"> It seems that you are already in the Participate In Program system.<br>
+          <br>
+          Please click the login button to continue.<br>
+          <a class="ui-btn ui-btn-c tsize1" href="login.html" rel="external">LOGIN as Current Client</a> </span> </div>
+        <div id="showlink2"> <span class="print_data_22"> It seems that there was problem.<br>
+          <br>
+          Please click the button to return to the form.<br>
+          <a class="ui-btn ui-btn-c tsize1" href="new-pir-application-form-begin.html" rel="external">RETURN to the form</a> </span> </div>
+        <script>
+
+//function testResults (form) {
+	
+// LOOK - problem is the key or no key in php !!!!!!! so for now I made it -1 or 1 for found to simplify!!!!! look into best way soon
+
+//
+$(document).ready(function(){	
+
+$("#showlink1").hide();
+$("#showlink2").hide();
+
+// start post
+// show that something is loading
+		$('#response').html("<b>Searching Participate In Program...</b>");
+		
+		/*
+		 * 'post_receiver.php' - where you will pass the form data
+		 * $(this).serialize() - to easily read form data
+		 * function(data){... - data contains the response from post_receiver.php
+		 */
+
+//tmp for test
+/*
+var cellphone = '818 111 2222';
+var driverslicense = '123456';
+var conum = '455';
+*/
+//var conum = '45599';
+
+
+$.post('https://participateinprogram.com/app-data/new-pir-search.php', {
+
+cellphone: localStorage.getItem("cellphone"),
+driverslicense: localStorage.getItem("driverslicense"),
+// real 
+conum: localStorage.getItem("conum"),
+//conum: conum,
+	
+}, function(data, status){
+	
+//
+console.log ('data', data);
+//output = "";
+
+$.each(data, function(key, value) {
+//console. log ('item', key, value);
+//alert("id 11aa  " + data.Client_ID)
+//alert("id 11aa  " + value.Client_ID)
+//alert("id is yo " + value.Client_ID);
+//$('#response').html(value.Client_ID);
+//$('#response').html("You are in the IDCApp System.");
+
+
+
+if (data.Client_ID == -1){
+	// this means none found so proceed and enter this new person
+	//alert("id is no " + value.Client_ID);
+	//$('#theresult').html("none found so proceed "+data.Client_ID);
+	$('#theresult').html("Proceed");	
+	//$("#showlink").hide(2000);
+	// real 
+	window.location.replace("new-pir-application-form-cart1.html");
+
+}else if (data.Client_ID == -99){	
+//$('#theresult').html("PROBLEM FAIL "+data.Client_ID);
+$('#theresult').html("The was a problem.");
+$("#showlink2").show(1000);	
+}else{
+	// this means YES found so do not proceed and just go to login
+	
+	//alert("id is yo " + value.Client_ID);
+	//$('#theresult').html("YES DID FIND SO just go to login " + data.Client_ID);
+	$('#theresult').html("Found Client");
+	
+	// set for login
+	localStorage.setItem("Client_ID", data.Client_ID);
+	localStorage.setItem("password", "");
+	// nah let's delete - may not be correct localStorage.setItem("password", localStorage.getItem("driverslicense"));
+	$("#showlink1").show(1000);
+}
+}// end if testid
+
+); 
+	//console.log ('data', data);
+		}).fail(function() {
+		
+			// just in case posting your form failed
+			// alert( "Posting failed." );
+			$('#response').html("Posting failed.");
+		});
+
+		// to prevent refreshing the whole page page
+		return false;
+})
+</script> 
+        
+        <!--INSERT END --> 
+        
+      </div>
+          <!-- end .box --> 
+        </div>
+    <!-- end .content --> 
+  </div>
+      <!-- /ui-content --> 
+      
+    </section>
+<!-- /page -->
+
+<footer data-role="footer" class="ui-barNAH" data-position="fixed" data-theme="a">
+      <div class="ui-grid-c boxblue"> 
+    <!--add footer --> 
+    
+    <!--foot --> 
+    
+  </div>
+    </footer>
+
+<!-- /footer -->
+
+</body>
+    </html>
+
+<!-- code for including header/footer -->
+<script type="text/javascript">
+      
+      // we're ready, include away
+      $(window).ready(function(){
+        
+        // use easy AJAX jQuery helpers
+        
+		// header no work!!!!
+        // add header.html into <header>
+        $.get("header-inc.html", function(fileData){
+          $('header').html(fileData); 
+        });
+
+        // add footer.html into <footer>
+		
+		 /*
+        $.get("footer-inc.html", function(fileData){
+          $('footer').html(fileData); 
+        });
+       
+	   */
+	   
+	   
+      });
+      
+    </script>

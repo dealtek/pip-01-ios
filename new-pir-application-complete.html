@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Participate In Program Application Complete</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+<link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+<link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	
+ <script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+
+<link href="mob.css" rel="stylesheet" type="text/css" /><style type="text/css">
+.textread {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #333;
+	text-align: left;
+	display: block;
+	background-color: #FFF;
+	margin-top: 2px;
+	margin-right: 22px;
+	margin-bottom: 2px;
+	margin-left: 22px;
+	
+}
+.boxsmall {
+	width: 50%;
+}
+	
+</style>
+
+  <link href="mob.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<div data-role="header" data-position="fixed" data-theme="a">
+
+<div class="box1 center1 boxblue" >
+<a href="dashboard.html" rel="external"><img src="pics/appbanner-320x60-home1.png" width="320" height="61" class="center" alt=""></a>
+</div>
+
+</div><!-- /header -->
+
+
+<section id="page01111" data-role="page">
+
+<div role="main" class="ui-content">
+
+<div class="content" >
+
+<div class="box1 center1" >
+  
+      
+<!--INSERT START -->
+
+<div align="center" class="99999999">
+
+
+<br><br>
+
+<h3>
+
+Your Participate In Program Application is Complete.<br><br>
+	
+	
+	
+	
+	
+	<strong>Your PARTICIPATE IN PROGRAM ID: <span style="font-size: 22px; color:Blue;" > (<span id="Client_ID"></span>)  </span><br /><br>
+		
+		
+		!!! IMPORTANT: WRITE DOWN AND SAVE YOUR PARTICIPATE IN PROGRAM <span style="font-size: 22px; color:Blue;" > ID NUMBER:   <span id="Client_ID2"></span> !!!</span> – Or take a screen shot.  You will need Participate in Program number to sign into the APP and ParticipateInProgram.com/mobile.  This device will remember your ID
+		</strong></h3>
+
+<h3>
+  <strong>Your login password is your <span style="font-size: 22px; color:Blue;" > DRIVERS LICENSE: <span id="driverslicense"></span>     </span>. An email receipt has been emailed to you with your Participate in Program ID.</strong><br>
+	
+<!-- real but nah	cl_emp_Drivers_License_No-->
+  <br>
+Now Please Click Continue.. </h3>
+<h3>
+  
+  <!--	REV GO COLL 1 or 2??????????????-->
+  
+  
+  
+  <a rel="external" class="buttonlink2" href="get_panelchoices.html" title="dashboard"> Continue to Dashboard</a>
+  
+  
+  <!--
+	<a rel="external" class="buttonlink2" href="dashboard.html" title="dashboard"> Continue to Dashboard</a>
+	
+-->
+  
+  
+  <!--	<a rel="external" class="buttonlink2" href="collection-sites1.html" title="Collection Sites">Collection Sites</a>-->
+  
+  
+  <!--<a rel="external" class="buttonlink2" href="login-from-newapplication.html" title="Collection Sites">Collection Sites</a>-->
+  
+  
+  <!--
+
+<a href="collection-sites1.html" title="s">Collection Sites</a>
+	
+	
+	
+	
+-->
+  
+  
+  
+  
+  
+</h3>
+	
+	<br><br><br><br>
+
+
+</div><!-- end .left -->
+
+
+
+<!--INSERT END -->
+
+</div><!-- end .box -->
+</div><!-- end .content -->
+</div><!-- /ui-content -->
+  
+</section><!-- /page -->
+<!--
+<footer data-role="footer" class="ui-barNAH" data-position="fixed" data-theme="a">
+<div class="ui-grid-c boxblue">
+foot
+</div>
+</footer> -->
+
+
+<!-- /footer -->
+
+</body>
+	
+
+<script id="complete">
+	
+document.getElementById('Client_ID').textContent = localStorage.getItem("Client_ID");
+document.getElementById('Client_ID2').textContent = localStorage.getItem("Client_ID");		
+// real but nah document.getElementById('cl_emp_Drivers_License_No').textContent = localStorage.getItem("cl_emp_Drivers_License_No");		
+document.getElementById('driverslicense').textContent = localStorage.getItem("driverslicense");	
+	
+
+// initialize these here so dash starts ok
+localStorage.setItem("rt_completecheck", "");
+localStorage.setItem("rt_completecheck_alco", "");
+localStorage.setItem("rt_completecheck_drug", "");
+localStorage.setItem("postaccident", '');
+localStorage.setItem('postaccdate', '');
+
+//alert("pre_emp_completecheck");
+// can't use foundzero
+localStorage.setItem("pre_emp_completecheck", "needcheck");
+localStorage.setItem("lastcheck_test", "01/01/2015");	
+
+
+
+function getpic(name) {
+
+
+//		$("#showme1").hide(1000);	
+//		$("#showme2").hide(1000);	
+
+
+if(name == 'ios'){
+// alert('1 ios' + name);
+
+//			$("#showme1").hide(1000);	
+$("#showme2").hide(1000);	
+
+$("#showme1").show(2000);	
+
+
+}else{
+
+
+$("#showme1").hide(1000);	
+//		$("#showme2").hide(1000);	
+//  alert('2 android ' + name);
+
+$("#showme2").show(2000);	
+
+}
+
+}
+
+$("#showme1").hide(2000);	
+$("#showme2").hide(2000);	
+
+
+</script>
+
+
+</html>

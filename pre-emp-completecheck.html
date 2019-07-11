@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Participate In Program pre emp check</title>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+    <link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+    <link href="mob.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+<div data-role="header" data-position="fixed" data-theme="a"> 
+      <!--add header --> 
+    </div>
+
+<!-- /header -->
+
+<section id="page01111" data-role="page">
+      <div role="main" class="ui-content">
+    <div class="content" >
+          <div class="box1 center1" > 
+        
+        <!--INSERT START --> 
+        
+        <!--!REV - use this to get and set local then go to test display page
+ --> 
+        
+        <!--yo <span id="today" ></span> today<br> --> 
+        
+        CHECKING NOW... 
+        
+        Your last test check was: <span id="lastcheck_test" ></span> <br>
+        <script LANGUAGE="JavaScript">
+
+
+
+$(document).ready(function(){
+
+lastcheck_test = new Date();
+localStorage.setItem('lastcheck_test', lastcheck_test);
+
+document.getElementById('lastcheck_test').textContent = localStorage.getItem("lastcheck_test");
+	
+var Client_ID  = localStorage.getItem("Client_ID");
+var webpass = localStorage.getItem("cl_emp_Drivers_License_No");
+var socialsec  = localStorage.getItem("cl_emp_Social_Security");
+//new 2019
+var empid  = localStorage.getItem("cl_emp_Employee_ID_Num");	
+	
+$.post('https://participateinprogram.com/app-data/pre-emp-completecheck.php', { 	
+	
+		Client_ID: Client_ID, 
+		socialsec: socialsec,
+		webpass: webpass,
+		empid: empid,	
+		},
+
+function(data, status){
+
+
+//alert("data is "+ data.trim());	
+
+// use this for all
+var datatrim = data.trim();
+var checkit1 = data.trim();	
+var xyes = checkit1.indexOf("testfound");	
+//alert( "xyes is " + xyes);
+	
+if (xyes > -1 ){		
+// so it exists
+//alert( "yeees22");	
+localStorage.setItem("pre_emp_completecheck", data.trim());
+}else{
+//
+//alert( "no22");
+
+// better soon
+//alert( "you need a test");	
+localStorage.setItem("pre_emp_completecheck", data.trim());	
+}
+
+//!!!! why all the white space in data?
+//also this good
+// this is very good maybe best to check for zero recs
+// orig if (!$.trim(data)){  
+
+if (!datatrim){  
+//alert("What follows is blank: " + datatrim);
+}
+else{   
+    //alert("What follows is not blank: " + datatrim);
+}
+
+window.location.replace("dashboard.html");
+
+});
+
+})
+
+</script> 
+        
+        <!--INSERT END --> 
+        
+      </div>
+          <!-- end .box --> 
+        </div>
+    <!-- end .content --> 
+  </div>
+      <!-- /ui-content --> 
+      
+    </section>
+<!-- /page -->
+
+<footer data-role="footer" class="ui-barNAH" data-position="fixed" data-theme="a">
+      <div class="ui-grid-c boxblue"> 
+    <!--add footer --> 
+  </div>
+    </footer>
+
+<!-- /footer -->
+
+</body>
+</html>

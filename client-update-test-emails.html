@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Participate In Program - email update 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+<link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="header" data-position="fixed" data-theme="a"> 
+  
+  <!--<h1>Page head Title</h1> --> 
+</div>
+<!-- /header -->
+
+<section id="page1" data-role="page">
+  <div role="main" class="ui-content">
+    <div class="content" >
+      <div class="box1 center1" > 
+        
+        <!--INSERT START --> 
+        
+<script>
+
+
+testResults();		
+
+
+//function testResults (form) {
+
+function testResults () {	
+
+//var Client_ID  = form.Client_ID.value;
+
+// alert ("You typed: " + Client_ID +" " +webpass);
+//alert("num is yuppp  " + form.PUC_Number.value);
+
+//localStorage.setItem("PUC_Number", form.PUC_Number.value);
+
+// start post	
+
+// show that something is loading
+//$('#response').html("<b>Loading response...</b>");
+
+//client-update-contact.php	- client-update-ztmp.php	 
+$.post('https://idcapp.com/app-data/client-update-test-emails.php', {			 
+
+Client_ID: localStorage.getItem("Client_ID"),
+
+email_results_tests_idc_sendfm: localStorage.getItem("email_results_tests_idc_sendfm"),	
+
+
+}, function(data){
+
+// show the response
+$('#response').html(data);
+//alert( "Posting yo." + localStorage.getItem("PUC_Number"));
+
+window.location.replace("dashboard.html");	
+}).fail(function() {
+
+// just in case posting your form failed
+alert( "Posting failed." );
+
+});
+
+// to prevent refreshing the whole page page
+return false;
+
+
+}
+</script> 
+
+        <!--INSERT END --> 
+        
+      </div>
+      <!-- end .box --> 
+    </div>
+    <!-- end .content --> 
+  </div>
+  <!-- /ui-content --> 
+  
+</section>
+
+</body>
+</html>

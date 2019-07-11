@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Participate In Program Search for a Lab - COLLECTION SITES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+    <link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+    <link href="mob.css" rel="stylesheet" type="text/css" />
+
+    <!-- add 2019-->
+    <script src="cordova.js"></script>
+    </head>
+    <body>
+<div data-role="header" data-position="fixed" data-theme="a">
+      <div class="box1 center1 boxblue" > <a href="dashboard.html" rel="external"><img src="pics/appbanner-320x60-home1.png" width="320" height="61" class="center" alt=""></a> </div>
+      
+      <!--<h1>Page head Title</h1> --> 
+    </div>
+<!-- /header -->
+
+<section id="page01111" data-role="page">
+      <div role="main" class="ui-content">
+    <div class="content" >
+          <div class="box1 center1" > 
+        
+        <!--INSERT START -->
+        
+        <div>
+              <table border="0" align="center" cellpadding="2" cellspacing="2">
+            <tr>
+                  <td></td>
+                  <td ><span class="print_data_16"><strong>You Need An <span id="text1"></span> <br>
+                  </strong> </span><br>
+                <strong>To Choose A Collection Site Press The Blue Bar.<br>
+                    </strong>
+                <div id="bluebar"> </div>
+                <div id="showlcorp"> 
+                      
+                      <!--Select a site near you: --> 
+                      
+                      <span class="print_data_20"> 
+                  
+                  <!--
+             
+                <a rel="external" href="https://www.labcorp.com/labs-and-appointments/?service=OCCUPATIONAL_DRUG_SCREENING" title="Labcorp Appointment" target="_blank">Make a Labcorp Appointment</a>
+							  
+							  
+--> 
+                  </span> </div></td>
+                  <td></td>
+                </tr>
+            <tr>
+                  <td></td>
+                  <td><div id="formshow">
+                      <form action=""  method="GET" name="nowform" id="nowform">
+                      <table width="100%" border="0" cellspacing="2" cellpadding="2">
+                          <tr>
+                          <td><input id="Zip" name="Zip" type="text" value="" size="8" class="print_data_22"></td>
+                          <td><input type="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search" name="submit" value= "Enter First<br>
+2 Zip Numbers and Press" onClick="testResults(this.form)" /></td>
+                        </tr>
+                        </table>
+                    </form>
+                    </div>
+                
+                <!--					  formshow--></td>
+                  <td></td>
+                </tr>
+            <tr>
+                  <td></td>
+                  <td ><div id="showlcoll"> </div>
+                <div id="textmessage1div" class="print_data_18"> <strong> <span class="print_data_16">Scroll down to choose your site and press Blue 'Make Appointment' Button. Mark NOT fasting and pick your time and date and fill out the form.
+					
+					
+					
+				<!--					width="681" height="121"-->
+					
+					<table width="300" border="0" align="center" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td valign="middle">Mark: </td>
+      <td><img src="pics/lcpic1.png" width="100%" alt="lcpic1"/></td>
+    </tr>
+  </tbody>
+</table>	
+					
+		
+					... And you are done scheduling your test.	<br>
+
+					Take a screen shot so you do not forget time and place.
+					
+					</span></strong> <span class="print_data_14">
+					
+					
+
+					
+					
+		<br>
+			
+
+ Note - clear the popups on Labcorp.com site then scroll down to see locations and make appointment.</span> <br>
+ <strong>Click DONE (bottom left) or 'X' (top right) When Finished with LabCorp. <br>
+                     
+                  <div align="left">
+                        <ul align="left">
+                      <li>Click the Top HOME BAR. When you go for your urine test, press 
+Drug Authorization form for Collector.
+						  
+<!--
+						  
+						  Click the Top HOME BAR To Go to Collector Mobile Authorization Form
+							
+							
+							When you go for your urine test press 
+Drug Authorization form for Collector (in RED letters and an arrow)
+-->
+
+							
+							
+							
+							
+							
+							
+							</li>
+                      <li>Show the Collector your Mobile Authorization by clicking On Mobile Authorization Form on the Front Page Link of This App.</li>
+                      <li>Write down the time and location of your appointment or take a screen shot so you do not forget.</li>
+                    </ul>
+                      </div>
+                  </strong> </div></td>
+                  <td></td>
+                </tr>
+          </table>
+            </div>
+        <script>
+
+
+
+var Zip = localStorage.getItem("Zip");
+//
+var ZipPart = Zip.substring(0, 2);
+//var ZipPart = Zip.substring(0, 3);			
+
+//pre populate
+document.nowform.Zip.value=ZipPart;
+// show doc then this new use soon - working document.nowform.Zip.value=Zip;
+//document.getElementById('Zip').textContent = localStorage.getItem("Zip");
+//document.getElementById('ZipPart').textContent = ZipPart;
+</script> 
+        <script>
+
+function testResults (form) {
+    //var Client_ID  = form.Client_ID.value;
+	//var webpass = form.webpass.value;
+   // alert ("You typed: " + Client_ID +" " +webpass);
+   
+   var zip = form.Zip.value;
+   //var zip = '91';
+	
+	
+$.get("https://participateinprogram.com/app-data/collection-sites1.php?zip="+zip, function(data, status){
+		
+//$.get("https://idcapp.com/app-data/collection-sites1.php?zip="+zip, function(data, status){		
+
+			
+// alert("Data: " + data + "\nStatus: " + status);
+console.log ('data', data);
+output = "";
+
+$.each(data, function(key, value) {
+
+var nowlink=encodeURI(value.weblink) ;
+
+console. log ('item', key, value);
+output += "<div class=\"margin2\"><li>" + 
+"LABCORP<br>TEL: " +
+value.PHONE + 
+"<br>" + value.ADDRESS
++ "<br> <strong>" + value.CITY
++ ", " + value.ST
++ "</strong> " + value.ZIP
++ "<br>Days: " + value.DAYS
++ "<br>Hours: " + value.HOURS 
++ "<br>" +  "<a class=\"buttonlink8\" target=\"_blank\" onClick=\"openBrowser('" + nowlink + "')\"  href=\""  + "\" >Make Appointment</a>"
++ "<br>"+ "<br>"
++ "</li></div>";
+
+}); 
+		
+		
+//new
+var element = document.getElementById("listshow");
+element.scrollIntoView();
+
+
+$('#list').html( output );
+$('#list').listview( "refresh" );
+
+});
+		
+}
+</script> 
+        <br>
+        <div data-role="main" class="ui-content">
+              <div align="left" class="margin1">
+            <div id="listshow">
+				<br>
+                  <ul id="list" data-role="listview">
+              </ul>
+                </div>
+          </div>
+            </div>
+        
+        <!--INSERT END --> 
+        
+      </div>
+          <!-- end .box --> 
+        </div>
+    <!-- end .content --> 
+  </div>
+      <!-- /ui-content --> 
+      
+    </section>
+<!-- /page -->
+
+<footer data-role="footer" class="ui-barNAH" data-position="fixed" data-theme="a">
+      <div class="ui-grid-c boxblue"> 
+    <!--foot --> 
+  </div>
+    </footer>
+
+<!-- /footer --> 
+
+<!-- code for including header/footer --> 
+<script type="text/javascript">
+
+// we're ready, include away
+$(window).ready(function(){
+
+// use easy AJAX jQuery helpers
+
+// header no work!!!!
+// add header.html into <header>
+$.get("header-inc.html", function(fileData){
+$('header').html(fileData); 
+});
+
+// add footer.html into <footer>
+$.get("footer-inc.html", function(fileData){
+$('footer').html(fileData); 
+});
+
+/*   */
+
+
+});
+
+if (
+localStorage.getItem("cl_toc_annual_only") == 1
+)
+{
+
+//alert("test");
+
+var text1 = "Employment Drug Test";
+$("#showlcorp").hide();
+$("#showlcorp").show(); // speed no work here
+
+$("#showlcoll").hide(); //hide
+//$("#showlcoll").show();
+
+// new
+//$("#listshow").hide(); 
+//
+//$("#formshow").hide(); 
+$("#bluebar").hide(); 
+
+
+
+$("#textmessage1div").show();	
+
+}else{
+
+//var text1 = "Pre-Employment Drug Test";
+var text1 = "Employment Drug Test";	
+$("#showlcorp").hide();
+//$("#textmessage1div").hide();
+//show for both
+$("#textmessage1div").show();		
+
+$("#showlcoll").hide(); //hide 03-27-19
+//$("#showlcoll").show();
+
+}	
+
+document.getElementById('text1').textContent = text1;
+
+</script> 
+<script id="openBrowser">
+
+function openBrowser(info) {
+//alert("test info is " + info);
+console.log('rev test Loading started: ' + info )	
+
+//var url = 'https://cordova.apache.org';
+//var url = 'https://www.labcorp.com';	
+//
+var url = info;
+
+var target = '_blank';
+var options = "location = yes"
+
+// check for cordova else web browser
+
+if( window.cordova 
+
+){
+//alert("cordova yes ");	
+//add InAppBrowser code
+
+var ref = cordova.InAppBrowser.open(url, target, options);
+
+ref.addEventListener('loadstart', loadstartCallback);
+ref.addEventListener('loadstop', loadstopCallback);
+ref.addEventListener('loaderror', loaderrorCallback);
+ref.addEventListener('exit', exitCallback);
+
+function loadstartCallback(event) {
+console.log('Loading started: '  + event.url)
+}
+
+function loadstopCallback(event) {
+console.log('Loading finished: ' + event.url)
+}
+
+function loaderrorCallback(error) {
+console.log('Loading error: ' + error.message)
+}
+
+function exitCallback() {
+console.log('Browser is closed...')
+}	
+// end InAppBrowser
+
+}
+else{
+//alert("cordova no ");		
+//add non cordova for computer browser
+window.open(info, "_blank");
+}
+
+}
+
+</script>
+</body>
+</html>

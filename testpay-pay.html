@@ -1,0 +1,612 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>New Client Payment test pay</title>
+<!-- demo -->
+<!--<script src="https://chosenpayments.transactiongateway.com/token/Collect.js" data-tokenization-key="B44HGb-W2nHD5-RcH5Uh-Q5E658"></script>-->
+<!-- REAL -->
+<script src="https://chosenpayments.transactiongateway.com/token/Collect.js" data-tokenization-key="5ZQET2-9y632K-PSMUY5-6UU3pU"></script>
+<!-- demo <script src="https://chosenpayments.transactiongateway.com/token/Collect.js" data-tokenization-key="5ZQET2-9y632K-PSMUY5-6UU3pU"></script>-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+<link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="inc/jq/validate/dist/jquery.validate.js"></script>
+<script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+<link href="mob.css" rel="stylesheet" type="text/css" />
+<style type="text/css"></style>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+</head>
+<body>
+<div data-role="header" data-position="fixed" data-theme="a">
+  <div class="box1 center1 boxblue" > <img src="pics/appbanner-320x60-home1.png" width="320" height="61" class="center" alt=""> </div>
+</div>
+<section id="page1" data-role="page">
+  <div role="main" class="ui-content">
+    <div class="content" >
+      <div class="box1 center1" > 
+        
+        <!--INSERT START --> 
+        <span class="print_data_20"><strong> 
+        
+        <!--for main response is --> 
+        
+        <span id="response"></span> <br>
+        <br>
+        </strong> </span> 
+		  
+<!--		  <a rel="external" class="buttonlink9" href="dashboard.html">Back</a><br>-->
+        
+		   <a rel="external" class="buttonlink9" href="test-pay-prep.html">Back</a><br><br>
+        <!--
+        4111111111111111<br><br>
+--> 
+        <!--
+        <a  onclick="javascript:doReload()">REFRESH</a><br>
+--> 
+        
+        <!-- NO LINKS HERE can delete good data --> 
+        <!--						required minlength="1"--> 
+        <!--hidden ?????????????????????  Phone2 or phone2    -->
+        
+        <table width="320" align="center" border="0">
+          <tr>
+            <td width="1" valign="TOP" ></td>
+            <td valign="TOP" align="center" ><form action="" method="post" name="thisform" id="thisform" >
+                <table width="95%" border="0" align="center" cellpadding="2" cellspacing="2">
+                  <tr align="center" valign="top">
+                    <td align="center"><div data-role="ui-field-contain">
+						
+							   <strong><span id="showtesttype"></span></strong><br>
+											
+						
+						Fee Amount: <span class="print_data_22"><strong> $<span id="showamount"></span></strong></span>
+                        <label class="label_16g" for="xxx"><span class="red299"></span></label>
+                        
+                        <!-- 	!!!!!!!!!!! rev note i took out validate from this area since hidden--> 
+                        
+                        <!--  real amount field to stay hidden-->
+                        <input name="amount" type="hidden" value="" />
+                        <input name="first_name" id="first_name" type="hidden" class="print_data_22" value=""  />
+                        <input name="last_name" id="last_name" type="hidden" class="print_data_22" value=""  />
+                        <input name="phone" id="phone" type="hidden" class="print_data_22" value=""  />
+                        <input name="Phone2" type="hidden" value=""   />
+                        <input name="email" id="email" type="hidden" class="print_data_22" value=""  />
+                        <input name="address1" id="address1" type="hidden" class="print_data_22" value=""  />
+                        <input name="city" id="city" type="hidden" class="print_data_22" value=""  />
+                        <input name="state" id="state" type="hidden" class="print_data_22" value=""   />
+                        <input name="zip" id="zip" type="hidden" class="print_data_22" value="" />
+                      </div></td>
+                  </tr>
+                  <tr align="left" valign="top">
+                    <td align="center"><span class="print_data_20"><strong>
+<!--						!!REV setup new php page soon!!!<br>-->
+						
+					Credit Card</strong> <span class="red2">* = Required</span></span><br>
+                      <strong> <span id="response2"></span> 
+                      
+                      <!--  *MAKE 3 FIELDS TURN GREEN* --> 
+                      
+                      </strong></td>
+                  </tr>
+                  <tr>
+                    <td align="left"><span class="red2">*</span>Credit Card Number
+                      <div id="ccnumber"></div></td>
+                  </tr>
+                  <tr>
+                    <td align="left"><span class="red2">*</span>Credit Card Expiration
+                      <div id="ccexp"></div></td>
+                  </tr>
+                  <tr>
+                    <td align="left"><span class="red2">*</span>CVV
+                      <div id="cvv"></div></td>
+                  </tr>
+                  <tr align="left" valign="top">
+                    <td align="center"><table  align="center" width="320" border="0">
+                        <tr>
+                          <td align="center"> Store your card <br>
+                            for next time </td>
+                          <td align="center"><table  align="center" width="150" border="0">
+                              <tbody>
+                                <tr>
+                                  <td align="center"><div data-role="ui-field-contain">
+                                      <label class="label_16g" for="cusvault"><span  class="red299"></span></label>
+                                      <select id="cusvault" name="cusvault" >
+                                        <option value="YES">YES</option>
+                                        <option value="NO">NO</option>
+                                      </select>
+                                    </div></td>
+                                </tr>
+                              </tbody>
+                            </table></td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                  <tr align="left" valign="top">
+                    <td align="center"><div id="payshow"> 
+                        <!-- payshow no hide for now - form too long and not as safe --> 
+                        <span class="print_data_22"> Submit: <br />
+                        <button id="submit_val" type="submit">Continue</button>
+                        </span>
+                        <div align="left" >Note: Card number goes directly to Card Processor and is <strong>Not Stored at ParticipateInProgram.com.</strong> Card Processor returns a  key for use only for ParticipateInProgram purchases. </div>
+                        <button id="customPayButton" type="submit"></button>
+                        <!--	rev Submit button id differnt from JS name ---- real - this is hidden - with real id--> 
+                      </div></td>
+					   </tr>
+					  
+                    <!--
+                  </tr>
+					  <tr align="left" valign="top">
+                    <td align="left"><div > Card number goes directly to Card Processor and is not stored at IDCapp. Card Processor returns a  key for use only for IDCapp purchases. </div></td>
+                  </tr>
+-->
+                    
+                </table>
+              </form></td>
+          </tr>
+        </table>
+        <script id="go1">
+
+$("#page1").on("pageinit", function() {
+//	
+//	$("#payshow").show(500);
+//	$("#payshow").hide(1000);
+//	
+//	console.log('hide payshow');	
+//alert ("test1");
+	
+	// maybe soon zip for avs  
+$("form").validate({
+       
+rules: {
+
+zip99: {
+required: true
+},
+state99: {
+required: true
+},
+first_name99: {
+required: true
+}, last_name99: {
+required: true
+}
+},
+errorPlacement: function(error, element) {
+error.insertBefore(element.parent());
+},
+			
+submitHandler: function(form) {
+        //code that should happen after validation if no errors are found goes here
+        
+//  alert ("success now card");
+//  just trigger listener now after validate
+	
+	// no go if all 3 ok 999999999999999999999999999
+	
+	// check again vars ok?
+if( ccn == "OK" && ccx == "OK" && ccv == "OK")
+{
+//alert("ALL 22222222222 GOOD x3");
+
+
+// payshow no hide for now - form too long	
+
+//$("#payshow").hide(0);
+//$("#payshow").show(1000);
+
+// window.scrollTo(0, 900);	
+
+// rev just tryyyyyyyyyyyyyyyy maybe dump	
+// the next line is required to work around a bug in WebKit (Chrome / Safari)
+// hmm no work
+//location.href = "#";
+//location.href = "#payshowbottom";	
+
+}else{
+// payshow no hide for now - form too long
+//$("#payshow").hide(1000);
+
+	//alert("ALL 22222222222 NOOOOOOOOOOOOO x3");
+	
+	
+	$("#response2").hide(100);
+
+	$('#response2').html("<b>* All 3 fields need to TURN GREEN to before you click Continue*</b>");	
+
+}	
+	
+	$("#response2").show(1500);
+
+window.scrollTo(0, 0);
+	// so user can see
+	$("#customPayButton").click();  
+ },
+//end handle
+	
+});
+ 
+}
+
+); // end page 1 validate
+
+</script> 
+        <script id="ready">
+		
+$(document).ready(function(){
+	
+$("#payshow").show(0);
+// start hidden
+// payshow no hide for now - form too long - now ok shorter
+//$("#payshow").hide(1000);	
+
+// hide real button for collect
+document.getElementById("customPayButton").style.visibility = "hidden";
+	
+document.getElementById("showtesttype").innerHTML = "Your Test is: " + localStorage.getItem("ev_test");		
+
+var theid = localStorage.getItem("Client_ID");
+
+// show 1st message
+
+$('#response2').html("<b>*MAKE 3 FIELDS TURN GREEN*</b>");	
+	
+	
+
+if(
+
+"process_response" in localStorage
+
+//localStorage.getItem("process_response") !=""
+
+){
+$('#response').html(localStorage.getItem("process_response"));	
+
+console.log('process_response exists is yes ');	
+
+}else{
+
+$('#response').html("<b>Click Submit at bottom when ready</b>");
+console.log('process_response exists is no ');
+}
+
+// note i already got CL and last inv on previous page so no need here
+	
+	
+	
+var dol = Math.floor((Math.random() * 3) + 1);
+var penn = Math.floor((Math.random() * 98) + 1);
+var amtnow = dol+"."+penn;
+//
+//
+console.log("amtnow is " + amtnow);	
+console.log("penn is " + penn);
+//pre populate
+document.thisform.first_name.value=localStorage.getItem("F_Name_Billing");
+document.thisform.last_name.value=localStorage.getItem("L_Name_Billing");
+document.thisform.address1.value=localStorage.getItem("Billing_Address");
+document.thisform.city.value=localStorage.getItem("Billing_City");
+//hint must use initials only
+document.thisform.state.value=localStorage.getItem("Billing_State");
+
+document.thisform.zip.value=localStorage.getItem("Billing_Zip");
+document.thisform.phone.value=localStorage.getItem("Billing_Phone");
+document.thisform.email.value=localStorage.getItem("email_Billing_Address");	
+
+//pre populate
+	
+localStorage.setItem("amount_tmp", localStorage.getItem("ev_price"));	
+localStorage.setItem("amount", localStorage.getItem("ev_price"));	
+
+//moved also
+document.thisform.amount.value=localStorage.getItem("ev_price");
+document.getElementById('showamount').textContent = localStorage.getItem("ev_price");
+// inv more	
+
+});
+
+		
+// end ready			
+			
+</script> 
+        <script id="process">
+
+function testResults (form) {
+	
+window.scrollTo(0, 0);
+	
+// start post
+// show that something is loading
+$('#response').html("<b>Loading response...</b>");
+	
+// done rev make this go to TEST PAY PAGE make soon - cause diff needs not new client just test!!!!!!!
+// no need to send - making new	invoice_id:
+	
+$.post('https://participateinprogram.com/app-data/pay/process-charge-test-card-js.php', {
+	
+Client_ID: localStorage.getItem("Client_ID"),
+amount: form.amount.value,
+payment_token: form.payment_token.value,
+first_name: form.first_name.value,
+last_name: form.last_name.value,
+	
+address1: form.address1.value,
+city: form.city.value,
+state: form.state.value,
+zip: form.zip.value,
+phone: form.phone.value,
+email: form.email.value,
+invoice_id: localStorage.getItem("cl_last_invoice_id"),
+coname: localStorage.getItem("Company"),
+customer_vault: form.cusvault.value,
+test_type: localStorage.getItem("ev_test"),
+ev_id:  localStorage.getItem("ev_id"),
+
+}, function(data){
+
+
+//set this for refresh
+
+localStorage.setItem("process_response", data);
+
+// parse response
+
+var resparse = data.split("&");
+
+var r1 = resparse[0].split("=");
+var r2 = resparse[1].split("=");
+var r3 = resparse[3].split("=");
+
+var resdisplay1 = r1[1];
+var resdisplay2 = r2[1];
+var resdisplay3 = r3[1];
+
+	
+var response_display_show = "Transaction Response: " + resdisplay2 + " (Code: " + resdisplay1 + ") Transaction ID: " + resdisplay3	
+
+localStorage.setItem("process_response", response_display_show);
+localStorage.setItem("process_actual", data); // just for me maybe tmp
+
+// do if then if response == 1 or text says success - go or stay here
+
+if(resdisplay1==1)
+{
+	
+//clear this after success on complete page
+	
+//localStorage.removeItem("process_response");
+//localStorage.removeItem("process_actual");
+window.location.replace("test-payment-complete.html");   
+
+}else{
+
+//window.scrollTo(0, 0);
+// need to get fresh cc code
+// well this erases all - loses field edits
+// rev soon maybe store all the input fields first
+// need this for JS collect oddity	- must reload to show result
+location.reload(true)
+}
+
+}).fail(function() {
+	
+// nah console.log('FAIL');
+
+// just in case posting your form failed
+alert( "Card Process Posting failed." );
+
+});
+
+// to prevent refreshing the whole page page
+return false;
+
+}
+</script> 
+        
+        <!--
+<script>
+
+</script> 
+--> 
+        <script id="collectjs">
+	
+var ccn = "nahhhhhhh";
+var ccx = "nahhhhhhh";
+var ccv = "nahhhhhhh";
+	
+var formsubmit = document.getElementsByTagName("form")[0];
+var amtshow = localStorage.getItem("ev_price");		
+
+document.addEventListener('DOMContentLoaded', function () {
+CollectJS.configure({
+"paymentSelector" : "#customPayButton",
+"variant" : "inline",
+"styleSniffer" : "false",
+'theme': 'bootstrap',
+'primaryColor': '#10D932',
+'secondaryColor': '#ffe200',
+'buttonText': 'Make Payment ($' + amtshow + ')',
+//"googleFont": "Montserrat:400",
+"customCss" : {
+"color": "#0000ff",
+"background-color": "#d0d0ff",
+"font-size": "20px"
+},
+"invalidCss": {
+"color": "white",
+"background-color": "red"
+},
+"validCss": {
+"color": "black",
+"background-color": "#d0ffd0"
+},
+"placeholderCss": {
+"color": "white",
+//"color": "green",
+//"font-size": "20px",
+//"color": "red",
+"background-color": "#D7C9C9",
+"googleFont": "Montserrat:700"
+
+//"background-color": "#808080"
+},
+"focusCss": {
+"color": "yellow",
+"background-color": "#202020"
+},
+"fields": {
+"ccnumber": {
+"selector": "#ccnumber",
+"title": "Card Number",
+"placeholder": "0000 0000 0000 0000"
+},
+"ccexp": {
+"selector": "#ccexp",
+"title": "Card Expiration",
+"placeholder": "00 / 00"
+},
+"cvv": {
+"display": "show",
+"selector": "#cvv",
+"title": "CVV Code",
+"placeholder": "***"
+}
+
+},
+'validationCallback' : function(field, status, message) {
+if (status) {
+var message = field + " is now OK: " + message;
+} else {
+var message = field + " is now Invalid: " + message;
+}
+console.log(message);
+
+
+// var ccn = "nada yet";
+// console.log(ccn);
+
+// var n = message.search("ccnumber is now OK");
+
+var tryok = message.search("OK");
+var tryccnumber = message.search("ccnumber");
+var tryccexp = message.search("ccexp");
+var trycvv = message.search("cvv");
+
+console.log('tryok is ' + tryok);
+console.log('tryccnumber is ' + tryccnumber);
+console.log('tryccexp is ' + tryccexp);
+console.log('trycvv is ' + trycvv);
+
+if(
+tryok > -1
+// ok
+){
+
+if(tryccnumber > -1 ){
+ccn = "OK";}
+if(tryccexp > -1 ){
+ccx = "OK";}
+if(trycvv > -1 ){
+ccv = "OK";}
+}
+if(
+tryok < 0
+// fail
+){
+if(tryccnumber > -1 ){
+ccn = "no";}
+if(tryccexp > -1 ){
+ccx = "no";}
+if(trycvv > -1 ){
+ccv = "no";}
+}
+console.log('all 3 are  ' + ccn +'---' + ccx +'---'+ ccv);
+
+if( ccn == "OK" && ccx == "OK" && ccv == "OK")
+{
+//alert("ALL GOOD x3"); hmmm this shows 3x is it looping
+
+
+// payshow no hide for now - form too long	
+
+//$("#payshow").hide(0);
+//$("#payshow").show(1000);
+
+// window.scrollTo(0, 900);	
+
+
+}else{
+// payshow no hide for now - form too long
+//$("#payshow").hide(1000);
+
+}
+
+},
+"timeoutDuration" : 2000,
+"timeoutCallback" : function () {
+console.log("The tokenization didn't respond in the expected timeframe.  This could be due to an invalid or incomplete field or poor connectivity");
+},
+"fieldsAvailableCallback" : function () {
+console.log("Collect.js loaded the fields onto the form");
+}
+
+,
+'callback' : function(response) {
+//alert(response.token);
+var input = document.createElement("input");
+input.type = "hidden";
+input.name = "payment_token";
+input.value = response.token;
+var form = document.getElementsByTagName("form")[0];
+form.appendChild(input);
+
+if(
+response.token != ''
+){
+testResults(form);
+}else{
+alert('there was a problem - no token');
+}
+//form.submit();
+console.log(form);
+
+}
+});
+});
+</script> 
+        
+        <!--
+<script>
+$("#payshow").show(100);	
+
+//$("#payshow").hide(1000);
+console.log('hide payshow');		
+
+</script> 
+--> 
+        <script id="s-doReload">
+/* xcx script: doReload v.1 */
+
+function doReload(){
+location.reload(true)
+}
+</script> 
+        <!--INSERT END --> 
+        
+      </div>
+      <!-- end .box --> 
+    </div>
+    <!-- end .content --> 
+  </div>
+  <!-- /ui-content --> 
+  
+</section>
+</body>
+</html>

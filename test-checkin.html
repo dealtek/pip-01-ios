@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Participate In Program - test checkin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+<link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+<link href="mob.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+input999 {
+	-moz-border-radius: 11px;
+	border-radius: 11px;
+	border: 1px solid #CCC;
+	padding: .2em;
+	margin: .2em 0;
+}
+.label_16g999 {
+	color: #999999;
+	font-size: 16px;
+}
+.big24999 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	background-color: #6290ee;
+	font-size: 24px;
+}
+</style>
+</head>
+<body>
+<div data-role="header" data-position="fixed" data-theme="a">
+  <div class="box1 center1 boxblue" > <a href="dashboard.html" rel="external"><img src="pics/appbanner-320x60-home1.png" width="320" height="61" class="center" alt=""></a> </div>
+  
+  <!--<h1>Page head Title</h1> --> 
+</div>
+<!-- /header -->
+
+<section id="page1" data-role="page">
+  <div role="main" class="ui-content">
+    <div class="content" >
+      <div class="box1 center1" > 
+        
+        <!--INSERT START --> 
+        
+        <a rel="external" href="dashboard.html" class="buttonlink2 center1">Back to Dashboard</a> <br>
+<!--
+        <br>
+        programmer test temp - <a  onclick="javascript:tmpdate1('4/25/2019')">date 4-25</a> - <a  onclick="javascript:tmpdate1('4/26/2019')">date 4 26</a> - <a  onclick="javascript:tmpdate1('4/27/2019')">date 4-27</a> <br>
+        <br>
+-->
+        <h2> <span class="blue1"><strong>
+          Today's Date is: <span id="showtoday"></span> <br>
+          Test Check in for <span id="Company"></span> <br>
+          <br>
+          <div id="response"></div>
+          <br>
+          <div align="center" id="xxx"> <span id="list_events"></span> </div>
+          <div id="testcheckindiv"> <br>
+            <button class="buttonform2_20" onclick="testcheckin()">- Test Check In - </button>
+            <br>
+          </div>
+          <div id="confirmshow">
+            <button class="buttonform2_20" onclick="confirm()"><span id="testpaytext"></span></button>
+          </div>
+          </strong></span> </h2>
+        
+        <!--<h2></h2>  --> 
+        
+        <span class="blue1 print_data_20"><strong> <br>
+        Problems?  Call <span id="cl_toc_owner_Contact_First"></span> <span id="cl_toc_owner_Contact_Last"></span> <span id="cl_toc_owner_Company"></span> at <span id="cl_toc_owner_Phone1"></span> <br>
+        <a rel="external" href="contractor-contact-info.html" class="buttonlink2 center1">Contact your Manager.</a> <br>
+        <br>
+        </strong> </span> 
+        
+        <!--INSERT END --> 
+        
+      </div>
+      <!-- end .box --> 
+    </div>
+    <!-- end .content --> 
+  </div>
+  <!-- /ui-content --> 
+  
+</section>
+<script id="docready">
+	
+		
+$(document).ready(function(){
+
+//  doc ready 
+	
+	
+// clear these in docready
+localStorage.setItem("ev_action", "");
+localStorage.setItem("ev_id", "");
+localStorage.setItem("ev_test", "");
+localStorage.setItem("ev_price", "");	
+	
+
+document.getElementById('cl_toc_owner_Company').textContent = localStorage.getItem("cl_toc_owner_Company");	
+document.getElementById('cl_toc_owner_Contact_First').textContent = localStorage.getItem("cl_toc_owner_Contact_First");	
+document.getElementById('cl_toc_owner_Contact_Last').textContent = localStorage.getItem("cl_toc_owner_Contact_Last");	
+document.getElementById('cl_toc_owner_Phone1').textContent = localStorage.getItem("cl_toc_owner_Phone1");	
+document.getElementById('cl_toc_owner_Phone1').textContent = localStorage.getItem("cl_toc_owner_Phone1");	
+document.getElementById('Company').textContent = localStorage.getItem("Company");		
+
+//$("#confirmshow").show(0);
+$("#confirmshow").hide(0);
+// hmmm no speed here 
+//$("#testcheckindiv").hide(0);
+$("#testcheckindiv").show(0);	
+	
+document.getElementById('testpaytext').textContent = "Click to Confirm that you saw this message.";	
+
+var d = new Date();
+var yr    = d.getFullYear();  /* Returns the hour (from 0-23) */
+var mo = d.getMonth() + 1;  /* needs extra 1 Returns the minutes (from 0-59) */ 
+var day = d.getDate();  /* Returns the minutes (from 0-59) */
+
+
+var todayfm = mo + "/" + day + "/" + yr	;			  
+
+var today2 = new Date(2018, 11, 24);
+localStorage.setItem("today", todayfm);	
+document.getElementById('showtoday').textContent = localStorage.getItem("today");
+	
+//console.log('mo ' + mo);
+//console.log('day ' + day);
+//console.log('yr ' + yr);	
+
+//alert("yo");
+	
+// doc said auto trigger
+testcheckin();
+	
+}); // end ready	
+
+
+</script> 
+<script id="start-test-checkin">
+
+function testcheckin () {
+	
+	
+var testpay = 'no';	
+	
+
+//alert(localStorage.getItem("today") + '  ' + '1111');
+
+//alert(localStorage.getItem("today") + '  ' + localStorage.getItem("cl_emp_Notify_PhoneText_c"));
+
+	
+// start post	
+// show that something is loading
+$('#response').html("<b>Loading response...</b>");
+
+//cl 53472
+//
+$.post('https://participateinprogram.com/app-data/test-checkin.php', {
+
+Notify_PhoneText_c:	localStorage.getItem("cl_emp_Notify_PhoneText_c"),
+	
+//cl_emp_Notify_PhoneText_c
+//	8888 1111
+	
+	// best use notify phone calc
+//callcode: '1111',
+
+// yo use empid!!!!!!!!! no callcode
+//date: '3/19/2019',
+
+date: localStorage.getItem("today"),
+	
+		
+}, function(data){
+		
+		
+if(data == "nothing"){
+	
+document.getElementById('testpaytext').textContent = "Click to Confirm that you saw this message.";
+	
+//$("#confirmshow").hide(0);
+//$("#confirmshow").hide(0);
+	
+// below no work for nothing	
+$("#confirmshow").show(2000);
+$("#testcheckindiv").hide(2000);	
+//alert("num is nope  " );
+
+//alert( "Posting nothing found." );
+$('#response').html('- You do *NOT* need a test today. -');
+
+console. log ('thedata', data);
+
+var output = ''; // just make 1
+
+//var output = ' or nothing here nothing found. You do not need a test today.'; // just make 1
+
+//yes to refresh
+$('#list_events').html( output );
+//document.getElementById('test1').textContent = localStorage.getItem("TestType");
+}else{
+// yes found test	
+var testpay = 'yes';
+	
+console. log ('testpay is ', testpay);	
+	
+document.getElementById('testpaytext').textContent = "Click to Confirm that you saw this message and Continue with Payment";	
+	
+
+
+//alert( "Posting yessss33." );
+
+// show the response
+
+$('#response').html('-You *DO* need a test today-');
+//
+
+console. log ('thedata', data);
+
+//alert( "Posting yo99999999." );
+
+var output = '';
+
+$.each(data, function(key, value) {
+console. log ('item', key, value);
+
+//console. log ('thedatax', value.TestType);
+
+// important - needs to just find 1 test for payment!!!!!!!	
+	// rev 2 fields for same thing make just one soon ev_test and ev_TestType from probation
+	
+output += 
+"<div class=\"row justify-content-center \">" + 
+"<div class=\"m-1 col text-light text-center bk4redcabos1 \">" + 
+"<strong>" + "<span class=\"titlewhite\">" + value.TestType  + " Date: " + value.Date + " Price: $" + value.Price_c  +  "</span>" + "</strong><br>" + 
+
+"</div></div>";
+	
+	// soon think about multi record come back!!!!!!!!!
+	
+	// really only have 1 per day max so no probs here
+	
+// clear these in docready
+localStorage.setItem("ev_action", "dopay");
+localStorage.setItem("ev_id", value.ev_id);
+	
+	// clear these out later after pay
+	
+localStorage.setItem("ev_TestType", value.TestType);	// is this a dupe?	
+localStorage.setItem("ev_pan_num", value.TestPanelNum_c);	
+localStorage.setItem("ev_desc", value.TestDesc_short_c);	
+	
+	
+//localStorage.setItem("password", value.password);
+	
+	// add dash
+var ttype = value.TestType.replace(/ /g, '-')
+localStorage.setItem("ev_test", ttype);	
+//localStorage.setItem("ev_test", value.TestType);
+localStorage.setItem("ev_price", value.Price_c);
+// just lazy better soon
+
+//real nah window.location.replace("login-test-check.html?new=" + tm);	
+
+
+});
+
+//var elmnt = document.getElementById("startlistview_calendar");
+//elmnt.scrollIntoView();
+
+
+//
+$('#list_events').html( output );
+
+
+//$('#response2').html(data);
+//window.location.replace("client-contact-info.html");
+	
+	
+	
+$("#confirmshow").show(2000);
+$("#testcheckindiv").hide(2000);
+	
+
+	
+
+}// end if data
+
+
+}).fail(function() {
+
+// just in case posting your form failed
+alert( "Posting failed." );
+
+// console. log ('thedatafail', data);
+
+
+});
+
+// to prevent refreshing the whole page page
+return false;
+//window.location.replace("new-client-application-register3.html");
+
+}
+</script> 
+<script id="start-confirm">
+
+function confirm() {
+	
+
+//alert('yo');
+$('#response').html('- Sending Confirmation -');
+
+
+// start post	
+// show that something is loading
+//$('#response').html("<b>Loading response...</b>");
+
+//cl 53472
+//
+//alert(localStorage.getItem("cl_emp_Notify_PhoneText_c"));
+
+
+$.post('https://participateinprogram.com/app-data/call-confirm.php', {
+
+// remember to add 1 in front - localStorage.getItem("CommonName")
+ClientPhone: '1' + localStorage.getItem("cl_emp_Notify_PhoneText_c"),	   
+confirm: '1',
+source: 'app',		   
+//callcode: '8888',
+
+// yo use empid!!!!!!!!! no callcode
+//date: '3/19/2019',
+
+//date: localStorage.getItem("today"),
+
+}, function(data){
+
+
+if(data == "There was a problem."){
+
+//alert("num is nope  " );
+
+//alert( "Posting nothing found." );
+$('#response').html('- problem. -');
+
+console. log ('thedata', data);
+
+var output = ''; // just make 1
+
+//var output = ' or nothing here nothing found. You do not need a test today.'; // just make 1
+
+//yes to refresh
+$('#list_events').html( output );
+//document.getElementById('test1').textContent = localStorage.getItem("TestType");
+}else{
+
+//alert( "Posting yessss33." );
+
+// show the response
+
+$('#response').html('-You have Successfully Confirmed -');
+//
+
+console. log ('thedata', data);
+
+//alert( "Posting yo99999999." );
+
+// don't need both var output = 'You have Successfully Confirmed';
+// no each needed
+
+//var elmnt = document.getElementById("startlistview_calendar");
+//elmnt.scrollIntoView();
+
+
+//
+// nah just response $('#list_events').html( output );
+
+
+//$('#response2').html(data);
+//window.location.replace("client-contact-info.html");
+	
+	
+	
+	
+// start go pay
+	
+	
+
+
+if(
+localStorage.getItem("ev_action") == "dopay" && localStorage.getItem("ev_price") != ""
+){
+//alert("go pay");
+	
+	//test-pay-prep.html
+	window.location.replace("test-pay-prep.html");
+//window.location.replace("testpay-bill.html");
+}
+
+
+	
+	
+
+}// end if data
+	
+
+
+
+}).fail(function() {
+
+// just in case posting your form failed
+alert( "Posting failed." );
+
+// console. log ('thedatafail', data);
+
+
+});
+
+// to prevent refreshing the whole page page
+return false;
+//window.location.replace("new-client-application-register3.html");
+	
+	//end confirm
+
+}
+</script> 
+<script id="tmpdate">	
+
+function tmpdate1(date){
+//localStorage.setItem("today", '3/19/2019');
+localStorage.setItem("today", date);
+//alert(localStorage.getItem("today"));
+}
+
+
+</script> 
+<script id="prepop noneed">
+//pre populate
+//document.thisform.PUC_Number.value=localStorage.getItem("PUC_Number");
+
+</script> 
+<script id="z1">
+
+</script> 
+
+<!-- /page --> 
+<!--
+<footer data-role="footer" class="ui-barNAH" data-position="fixed" data-theme="a">
+<div class="ui-grid-c boxblue">
+foot
+</div>
+</footer> --> 
+
+<!-- /footer -->
+
+</body>
+</html>

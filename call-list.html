@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Participate In Program Search for a Lab - Call List</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+<link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="inc/moment.js"></script>
+<script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+<link href="mob.css" rel="stylesheet" type="text/css" />
+
+<!--this for table friendly dummmmp some at bottom-->
+<style>
+div.blueTable {
+	border: 1px solid #1C6EA4;
+	/*	background-color: #EEEEEE; */
+
+	background-color: #FFFFFF;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+.divTable.blueTable .divTableCell, .divTable.blueTable .divTableHead {
+	border: 1px solid #AAAAAA;
+	padding: 4px 4px;
+}
+.divTable.blueTable .divTableBody .divTableCell {
+/*  font-size: 16px; ---- use tbl_data*/
+}
+.divTable.blueTable .divTableRow:nth-child(even) {
+	/*	background: #D0E4F5;
+EEEEEE
+*/
+	background: #FFFFFF;
+}
+.divTable.blueTable .divTableHeading {
+	/*
+*background: EEEEEE;
+
+background: #EEEEEE;
+
+*/
+
+	background: #EEEEEE;
+	/*background: #1C6EA4;
+
+//color: #1C6EA4; nah
+
+background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+*/
+	border-bottom: 2px solid #444444;
+}
+.divTable.blueTable .divTableHeading .divTableHead {
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFFFFF;
+	border-left: 2px solid #D0E4F5;
+}
+.divTable.blueTable .divTableHeading .divTableHead:first-child {
+	border-left: none;
+}
+.blueTable .tableFootStyle {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background: #D0E4F5;
+	background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+	background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+	background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+	border-top: 2px solid #444444;
+}
+.blueTable .tableFootStyle {
+	font-size: 14px;
+}
+.blueTable .tableFootStyle .links {
+	text-align: right;
+}
+.blueTable .tableFootStyle .links a {
+	display: inline-block;
+	background: #1C6EA4;
+	color: #FFFFFF;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
+.blueTable.outerTableFooter {
+	border-top: none;
+}
+.blueTable.outerTableFooter .tableFootStyle {
+	padding: 3px 5px;
+}
+/* DivTable.com */
+.divTable {
+	display: table;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	display: table-cell;
+}
+.divTableHeading {
+	display: table-header-group;
+}
+.divTableFoot {
+	display: table-footer-group;
+}
+.divTableBody {
+	display: table-row-group;
+}
+.divTableCell_rev1 {
+/* font-size: 26px;	nahhhhhhh	me extra try*/
+
+}
+/*no using*/
+.revcontain {
+	border: 1px solid #AAAAAA;
+	padding: 3px 2px;
+	width: 300px;
+	align-content: center;
+}
+.fullwidth {
+	max-width: 600px;
+	align-content: left;/*
+
+not using maybe on lineitems
+
+border: 00px ;
+border: 00px solid #AAAAAA;
+margin: auto;
+border: 1px solid #AAAAAA;
+padding: 3px 2px;
+align-content: center;
+width: 800px;
+max-width:500px;
+no using*/
+}
+.fullwidth2 {
+	align-content: left;
+	border: 21px solid #AAAAAA;/*
+
+not using
+
+
+width: 80%;
+width: 800px;
+max-width:900px;
+border: 00px ;
+border: 00px solid #AAAAAA;
+margin: auto;
+border: 1px solid #AAAAAA;
+padding: 3px 2px;
+align-content: center;
+width: 800px;
+max-width:500px;
+no using*/
+}
+/*using*/
+.tbl_label {
+	background: #EEEEEE; /*	*/
+	text-align: right;
+	width: 120px;
+}
+.tbl_label2 {
+	background: #EEEEEE; /*	*/
+	text-align: left;
+	width: 120px;
+}
+.tbl_label3 {
+	background: #EEEEEE; /*	*/
+	text-align: left;
+	width: 80px;
+}
+.tbl_label4 {
+	background: #EEEEEE; /* nah width: 80px;	*/
+	text-align: left;
+}
+.tbl_label_edit {
+	background: #EEEEEE; /*	*/
+	text-align: left;
+	width: 44px;
+}
+.tbl_data {
+	/* font-size: 26px !important; */
+	font-size: 16px;
+	font-weight: bold;
+	padding: 2px 8px;
+}
+.tbl_data2 {
+	/* sammmmmme? font-size: 26px !important; */
+	font-size: 16px;
+	font-weight: bold;
+	padding: 2px 8px;
+}
+.tbl_data3 {
+	/* w BK sammmmmme? font-size: 26px !important; */
+	background: #EEEEEE;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 2px 8px;
+}
+.tbl_data4 {
+	/* w BK sammmmmme? font-size: 26px !important; */
+/*	background: #EEEEEE;*/
+	font-size: 16px;
+	/*	font-weight: bold;*/
+	padding: 2px 8px;
+}
+.bk1 {
+	background: #88ade8;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px;	*/
+}
+.bk2 {
+	background: #5179ba;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px; 5179ba	*/
+}
+.bk3 {
+	background: #ba505d;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px; 5179ba	*/
+}
+.bk4red {
+	background: #b4181b;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px; 5179ba	*/
+}
+.bk5green {
+	background: #83a747;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px; 5179ba	*/
+}
+.bk6brown {
+	background: #ce751b;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px; 5179ba	*/
+}
+.bk7blue {
+	background: #0479be;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px; 5179ba	*/
+}
+.bk8purp {
+	background: #c74486;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px; 5179ba	*/
+}
+.bk9blue2 {
+	background: #716cac;/*text-align: right;  EEEEEE - 1C6EA4 #88ade8
+width: 120px; 5179ba	*/
+}
+/*align-content: right;*/
+
+div.ph-contain {
+	/*	just this i think */
+/*	contain for phone */
+	max-width: 300px;
+	margin: auto;
+	border: 3px solid #EEEEEE;/*	EEEEEE  border: 3px solid #73AD21;*/
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+.titlewhite {
+	font-size: 22px;
+	font-weight: bold;
+	color: #FFFFFF;/*		background: #D0E4F5;	 */
+}
+.borderlight1 {
+	border: 1px solid #1C6EA4;
+}
+</style>
+</head>
+<body>
+<div data-role="header" data-position="fixed" data-theme="a">
+  <div class="box1 center1 boxblue" > <a href="dashboard.html" rel="external"><img src="pics/appbanner-320x60-home1.png" width="320" height="61" class="center" alt=""></a> </div>
+  
+  <!--<h1>Page head Title</h1> --> 
+</div>
+<!-- /header -->
+
+<section id="page01111" data-role="page">
+  <div role="main" class="ui-content">
+    <div class="content" >
+      <div class="box1 center1" > 
+        
+        <!--INSERT START -->
+        
+        <div>
+          <table border="0" align="center" cellpadding="2" cellspacing="2">
+            <tr>
+              <td></td>
+              <td ><p>
+
+
+              <span class="print_data_20"> <strong> <span class="cap1"> <span id="Company"></span> </span></strong> <span class="print_data_14"> ID: </span><strong> <span id="Client_ID"></span> </strong></span> 
+				  <br>
+				  
+				  <span class="print_data_14">
+			  Today is <span id="today"></span><br>
+				</span>
+
+                <span class="print_data_16"><strong> Your Recent Call In History.
+                <div id="response"></div>
+                </strong></span>
+                </p>
+                <div id="bluebar"> </div>
+                <div id="showlcorp"> <span class="print_data_20"> </span> </div></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><div id="formshow"> </div>
+                
+                <!--   formshow--></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td ><div id="showlcoll"> </div>
+                <div id="textmessage1div" class="print_data_18"> <strong> <span class="print_data_16"> </span> <br>
+                  <br>
+                  <div align="left"> </div>
+                  </strong> </div>
+                <div id="listshow">
+					
+					
+					<div data-role="main">
+					
+                  <div align="left" id="xxx"> 
+  
+<ul id="list_events" data-role="listview">
+</ul>
+					</div>
+					
+					</div>
+					
+					
+                </div></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+        
+		  
+		  
+        <script id="start-call-list">
+	
+	
+testcheckin ();	
+	
+	
+
+function testcheckin () {
+	
+	
+var testpay = 'no';	
+	
+
+// start post	
+// show that something is loading
+$('#response').html("<b>Loading response...</b>");
+
+//cl 53472
+//
+	
+	
+var callid = localStorage.getItem("cl_emp_Notify_PhoneText_c");	
+	
+	
+	
+	
+//$.post('https://participateinprogram.com/app-data/test-checkin.php', {
+$.post('https://participateinprogram.com/app-data/call-list.php?', {	
+
+//Notify_PhoneText_c:	localStorage.getItem("cl_emp_Notify_PhoneText_c"),
+callid: localStorage.getItem("cl_emp_Notify_PhoneText_c"),	
+
+
+//date: localStorage.getItem("today"),
+	
+		
+}, function(data){
+		
+		
+if(data == "nothing"){
+	
+$('#response').html("<b>It seems there are no calls found</b>");
+//alert("num is nope  " );
+
+//alert( "Posting nothing found." );
+//$('#response').html('- You do *NOT* need a test today. -');
+
+console. log ('nothing thedata', data);
+
+var output = ''; // just make 1
+
+//var output = ' or nothing here nothing found. You do not need a test today.'; // just make 1
+
+//yes to refresh
+$('#list_events').html( output );
+//document.getElementById('test1').textContent = localStorage.getItem("TestType");
+}else{
+//$('#response').html("<b>Complete</b>");
+$('#response').html("");	
+	
+var testpay = 'yes';
+	
+console. log ('testpay is ', testpay);	
+	
+
+
+console. log ('yum thedata', data);
+
+//alert( "Posting yo9." );
+
+var output = '';
+
+$.each(data, function(key, value) {
+console. log ('item', key, value);
+	
+	
+	
+	
+// momentjs
+	
+	
+//var fmdt = value.date_stamp;	
+	
+//var fmdt = moment('01/02/2016', 'MM/DD/YYYY');
+//var fmdt = moment('01/06/2016', 'MM/DD/YYYY');	
+var fmdt = moment(value.date_stamp, 'MM/DD/YYYY');		
+	
+//var	weekDayName =  moment(fmdt).format('dddd');
+///	weekDayName =  moment(fmdt).format('dddd');
+weekDayName =  moment(fmdt).format('dddd');	
+
+var date_format = '12'; /* FORMAT CAN BE 12 hour (12) OR 24 hour (24)*/
+var d = new Date(value.date_stamp);
+var dd = d.getDate();
+var mm = d.getMonth()+1; 
+var yyyy = d.getFullYear();
+//time
+var hour    = d.getHours();  /* Returns the hour (from 0-23) */
+var minutes = d.getMinutes();  /* Returns the minutes (from 0-59) */
+var result  = hour;
+var ext     = '';
+	
+var theday =  d.getDay();	
+	
+//thisdate = theday + " " + mm+'-'+dd+'-'+yyyy;
+thisdate =  mm+'-'+dd+'-'+yyyy;	
+	
+//time calc
+if(date_format == '12'){
+    if(hour > 12){
+        ext = 'PM';
+        hour = (hour - 12);
+
+        if(hour < 10){
+            result = "0" + hour;
+        }else if(hour == 12){
+            hour = "00";
+            ext = 'AM';
+        }
+    }
+    else if(hour < 12){
+        result = ((hour < 10) ? "0" + hour : hour);
+        ext = 'AM';
+    }else if(hour == 12){
+        ext = 'PM';
+    }
+}
+
+if(minutes < 10){
+    minutes = "0" + minutes; 
+}
+
+thetime = result + ":" + minutes + ' ' + ext; 
+var conf = "NO"
+	
+	if(value.confirm !=""){
+		
+		var conf = "YES"
+		
+	}
+
+
+	
+	
+	//"<strong>" + "<span class=\"titlewhite\">" + thisdate  + " Date: " + thetime + " Prissssce: $"  "</span>" + "</strong><br>" + 
+	
+
+//console. log ('thedatax', value.TestType);
+	
+	
+	
+	
+//fool
+//"<div class=\"divTableRow\">" + 
+//"<div class=\"divTableCell tbl_label3\">Start Time:</div>" +
+//"<div class=\"divTableCell tbl_data text-left m1 p1\"><strong>&nbsp;" + "<span class=\"print_data_14xx\">&nbsp;" + timeformatted + "</span></strong></div>" +
+//"</div>" +	
+//	
+	
+	
+	
+output += 
+	
+	"<div class=\"divTableRow\">" + 
+	"<div class=\"divTableCell tbl_label3\">" + weekDayName +  "</div>" +
+	
+	
+//	"<div class=\"divTableCell tbl_data text-left m1 p1\"><strong>&nbsp;" + "<span class=\"print_data_14xx\">&nbsp;" + weekDayName + "</span></strong></div>" +
+	
+	"<div class=\"divTableCell tbl_data text-left m1 p1\"><strong>&nbsp;" + "<span class=\"print_data_14xx\">" + thisdate + " " + thetime + "</span></strong></div>" +
+	
+//	"<div class=\"divTableCell tbl_data text-left m1 p1\"><strong>&nbsp;" + "<span class=\"print_data_14xx\">&nbsp;" + thetime + "</span></strong></div>" +
+	
+	"</div>" 
++	
+	
+	"<div class=\"divTableRow\">" + 
+	
+	"<div class=\"divTableCell tbl_data4 text-left m1 p1\"></div>" +
+	
+	"<div class=\"divTableCell tbl_data4 text-left m1 p1\">Confirm: <strong>&nbsp;" + "<span class=\"tbl_data\">&nbsp;" + conf + "</span></strong></div>" +
+	
+	"</div>" 
+	;	
+	
+	
+	
+	
+//"<div class=\"row justify-content-center \">" + 
+//"<div class=\"m-1 col text-light text-center bk4redcabos1 \">" + 
+//"<strong></strong>" + "<span class=\"titlewhite\">" + weekDayName  + " <strong>"+ thisdate  + "</strong>&nbsp;&nbsp;&nbsp;" + thetime + "</span> &nbsp;&nbsp;&nbsp;Confirm: <strong> <span class=\"titlewhite\">" + conf + "</span></strong><br>" + 
+//
+//"</div></div>"
+	
+	
+	;	//end
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//real
+//output += 
+//"<div class=\"row justify-content-center \">" + 
+//"<div class=\"m-1 col text-light text-center bk4redcabos1 \">" + 
+//"<strong></strong>" + "<span class=\"titlewhite\">" + weekDayName  + " <strong>"+ thisdate  + "</strong>&nbsp;&nbsp;&nbsp;" + thetime + "</span> &nbsp;&nbsp;&nbsp;Confirm: <strong> <span class=\"titlewhite\">" + conf + "</span></strong><br>" + 
+//
+//"</div></div>";
+
+localStorage.setItem("ev_id", value.ev_id);
+//localStorage.setItem("password", value.password);
+localStorage.setItem("TestType", value.TestType);
+// just lasy better soon
+
+//real nah window.location.replace("login-test-check.html?new=" + tm);	
+
+
+});
+
+
+//new
+		var element = document.getElementById("listshow");
+		element.scrollIntoView();
+
+//
+$('#list_events').html( output );
+
+
+	
+
+}// end if data
+
+
+}).fail(function() {
+
+// just in case posting your form failed
+alert( "Posting failed." );
+
+// console. log ('thedatafail', data);
+
+
+});
+
+// to prevent refreshing the whole page page
+return false;
+//window.location.replace("new-client-application-register3.html");
+
+}
+</script>
+        <div data-role="main" class="ui-content">
+          <div align="left" class="margin1">
+            <div id="listshow">
+              <ul id="list" data-role="listview">
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!--INSERT END --> 
+        
+      </div>
+      <!-- end .box --> 
+    </div>
+    <!-- end .content --> 
+  </div>
+  <!-- /ui-content --> 
+  
+</section>
+<!-- /page -->
+
+<footer data-role="footer" class="ui-barNAH" data-position="fixed" data-theme="a">
+  <div class="ui-grid-c boxblue"> 
+    <!--foot --> 
+  </div>
+</footer>
+
+<!-- /footer --> 
+
+<!-- code for including header/footer --> 
+<script type="text/javascript">
+      
+      // we're ready, include away
+      $(window).ready(function(){
+        
+        // use easy AJAX jQuery helpers
+        
+		// header no work!!!!
+        // add header.html into <header>
+        $.get("header-inc.html", function(fileData){
+          $('header').html(fileData); 
+        });
+				
+        // add footer.html into <footer>
+        $.get("footer-inc.html", function(fileData){
+          $('footer').html(fileData); 
+        });
+       
+	 /*   */
+	   
+	   
+      });
+	
+
+			
+
+
+    </script> 
+<script id="ready">	
+		
+$(document).ready(function(){	
+	
+document.getElementById('Client_ID').textContent = localStorage.getItem("Client_ID");
+document.getElementById('Company').textContent = localStorage.getItem("Company");
+document.getElementById('today').textContent = localStorage.getItem("todayformat");
+	
+}); // end ready
+		
+		
+	</script>
+</body>
+</html>

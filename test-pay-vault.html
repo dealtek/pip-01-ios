@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Participate In Program - test pay vault</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="inc/jq/themes/theme-02.min.css" />
+<link rel="stylesheet" href="inc/jq/themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+	$(function(){
+		$( "[data-role='header'], [data-role='footer']" ).toolbar();
+		});
+    </script>
+<link href="mob.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+input999 {
+	-moz-border-radius: 11px;
+	border-radius: 11px;
+	border: 1px solid #CCC;
+	padding: .2em;
+	margin: .2em 0;
+}
+.label_16g999 {
+	color: #999999;
+	font-size: 16px;
+}
+.big24999 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	background-color: #6290ee;
+	font-size: 24px;
+}
+</style>
+</head>
+<body>
+<div data-role="header" data-position="fixed" data-theme="a">
+  <div class="box1 center1 boxblue" > <a href="dashboard.html" rel="external"><img src="pics/appbanner-320x60-home1.png" width="320" height="61" class="center" alt=""></a> </div>
+  
+  <!--<h1>Page head Title</h1> --> 
+</div>
+<!-- /header -->
+
+<section id="page1" data-role="page">
+  <div role="main" class="ui-content">
+    <div class="content" >
+      <div class="box1 center1" > 
+        
+        <!--INSERT START -->
+        
+        <table width="315" border="0" align="center" cellpadding="2" cellspacing="2">
+          <tbody>
+            <tr>
+              <td><br>
+                <a rel="external" class="buttonlink9" href="test-pay-prep.html">Back</a><br>
+                <br>
+                <a rel="external" class="buttonlink9" href="testpay-bill.html">Pay With New Card</a> <br>
+                <br>
+				   <strong><span id="showtesttype"></span></strong><br>
+                Fee Amount: <span class="print_data_22"><strong> $<span id="showamount"></span></strong></span> <br>
+				  
+				 
+				  
+				  
+                <span class="print_data_22"><strong>Card Ending in: <span id="showlastfour"></span> </strong></span><br>
+<!--                response is -->
+				  
+				  <strong> <span id="response"></span> </strong>
+                <div align="left" id="showform">
+<!--					value="1901558041"-->
+                  <form action="" method="post" name="thisform" id="thisform" >
+                    <input name="customer_vault_id" id="customer_vault_id" type="hidden" class="print_data_22" value=""   />
+                    <input name="amount" id="amount" type="hidden" class="print_data_22" value="1.01"   />
+                    <input id="startpayment" type="button" class="zzzbuttonlink9" name="submit" value= "Make Payment With This Card" onClick="testResults(this.form)" />
+                  </form>
+                </div></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <!--INSERT END --> 
+        
+      </div>
+      <!-- end .box --> 
+    </div>
+    <!-- end .content --> 
+  </div>
+  <!-- /ui-content --> 
+  
+</section>
+<script id="docready">
+
+$(document).ready(function(){
+	
+	
+//pre populate	
+document.thisform.customer_vault_id.value=localStorage.getItem("ev_pay_cus_vault_id_choice");
+document.thisform.amount.value=localStorage.getItem("ev_price");	
+//document.nowform.customer_vault_id.value=localStorage.getItem("ev_pay_cus_vault_id_choice_info");
+	
+document.getElementById('showlastfour').textContent = localStorage.getItem("ev_pay_cus_vault_id_choice_info");		
+
+document.getElementById('showamount').textContent = localStorage.getItem("ev_price");	
+document.getElementById("showtesttype").innerHTML = "Your Test is: " + localStorage.getItem("ev_test");	
+
+
+$("#showform").hide(0);
+$("#showform").show(1000);
+
+});
+
+</script> 
+<script id="process">
+
+function testResults (form) {
+	
+//alert("yo1");		
+
+//	alert("aaaaaaaaaaaaa");	
+//	
+	
+window.scrollTo(0, 0);
+	
+// start post
+// show that something is loading
+$('#response').html("<b>Loading response...</b>");
+	
+console.log(form.customer_vault_id.value);	
+	
+
+	// new name process-charge-test-cvault
+	
+	
+// old name $.post('https://participateinprogram.com/app-data/pay/process-testpay-cvault.php', {
+	
+//process-charge-test-cvault-js
+	
+$.post('https://participateinprogram.com/app-data/pay/process-charge-test-cvault-js.php', {	
+Client_ID: localStorage.getItem("Client_ID"),
+amount: form.amount.value,
+customer_vault_id:  form.customer_vault_id.value,
+test_type: localStorage.getItem("ev_test"),
+ev_id:  localStorage.getItem("ev_id"),
+	
+// note sooon use choice one
+// now my fake tester one
+//soooon customer_vault_id:  localStorage.getItem("ev_pay_cus_vault_id_choice")	
+// send more info	
+
+// or add to form
+
+//	localStorage.setItem("ev_action", "dopay");
+//localStorage.setItem("ev_id", value.ev_id);
+////localStorage.setItem("password", value.password);
+//localStorage.setItem("ev_test", value.TestType);
+//localStorage.setItem("ev_price", value.Price_c);
+	
+//payment_token: form.payment_token.value,
+//first_name: form.first_name.value,
+//last_name: form.last_name.value,
+//	
+//address1: form.address1.value,
+//city: form.city.value,
+//state: form.state.value,
+//zip: form.zip.value,
+//phone: form.phone.value,
+//email: form.email.value,
+//invoice_id: localStorage.getItem("cl_last_invoice_id"),
+//coname: localStorage.getItem("Company"),
+//customer_vault: form.cusvault.value,
+
+}, function(data){
+	
+	
+//data is cl id add funn note
+	
+console. log ('thedatayes', data);	
+
+//alert("bbb");	
+//set this for refresh
+
+localStorage.setItem("process_response", data);
+
+// parse response
+
+var resparse = data.split("&");
+
+var r1 = resparse[0].split("=");
+var r2 = resparse[1].split("=");
+var r3 = resparse[3].split("=");
+
+var resdisplay1 = r1[1];
+var resdisplay2 = r2[1];
+var resdisplay3 = r3[1];
+
+	
+var response_display_show = "Transaction Response: " + resdisplay2 + " (Code: " + resdisplay1 + ") Transaction ID: " + resdisplay3	
+
+localStorage.setItem("process_response", response_display_show);
+localStorage.setItem("process_actual", data); // just for me maybe tmp
+
+// do if then if response == 1 or text says success - go or stay here
+
+if(resdisplay1==1)
+{
+	
+//clear this after success on complete page
+	
+//localStorage.removeItem("process_response");
+//localStorage.removeItem("process_actual");
+//	
+// nah $('#response').html(response_display_show + "SUCCESS " + data );	
+
+window.location.replace("test-payment-complete.html");   
+
+}else{
+
+console. log ('thedatafail', data);	
+$('#response').html(response_display_show + "problem " + data );		
+//alert( "Card Process Posting failed." );
+//window.scrollTo(0, 0);
+// need to get fresh cc code
+// well this erases all - loses field edits
+// rev soon maybe store all the input fields first
+// need this for JS collect oddity	- must reload to show result
+// bakkkkkkkkkkkkkk location.reload(true)
+}
+
+}).fail(function() {
+// nah console. log ('FAIL', data);	
+// nah console.log('FAIL');
+
+// just in case posting your form failed
+alert( "Card Process Posting failed." );
+
+});
+
+// to prevent refreshing the whole page page
+return false;
+
+}
+</script> 
+
+<!-- /page --> 
+<!--
+<footer data-role="footer" class="ui-barNAH" data-position="fixed" data-theme="a">
+<div class="ui-grid-c boxblue">
+foot
+</div>
+</footer> --> 
+
+<!-- /footer -->
+
+</body>
+</html>
