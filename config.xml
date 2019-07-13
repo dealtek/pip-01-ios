@@ -17,7 +17,6 @@ just android ios
 <gap:platform name="winphone" />
 -->
 
-	
     <!-- versionCode is optional and Android only DM iFrame v3 -->
 
     <name>Participate In Program Drug Free</name>
@@ -174,11 +173,16 @@ just android ios
 <gap:plugin name="cordova-plugin-vibration" source="npm" />
 
 <!-- no this starts with web <content src="https://idcapp.com" />-->
-<allow-navigation href="https://idcapp.com/*" />
-<allow-navigation href="https://nortonmedical.com/*" />	
-<allow-navigation href="https://labcorp.com/*" />	
-<allow-navigation href="https://www.labcorp.com/*" />	
 	
+<allow-navigation href="https://participateinprogram.com/*" />
+<allow-navigation href="https://www.participateinprogram.com/*" />		
+<allow-navigation href="https://idcapp.com/*" />
+<allow-navigation href="https://www.idcapp.com/*" />	
+<allow-navigation href="https://nortonmedical.com/*" />
+<allow-navigation href="https://www.nortonmedical.com/*" />		
+<allow-navigation href="https://labcorp.com/*" />	
+<allow-navigation href="https://nortonmedicalclients.com/*" />
+<allow-navigation href="https://www.nortonmedicalclients.com/*" />
 	
 <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
 
