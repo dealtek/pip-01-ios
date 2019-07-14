@@ -284,7 +284,12 @@ document.getElementById('cl_emp_Last').textContent = localStorage.getItem("cl_em
 //document.getElementById('cl_emp_City_Taxi_Permit_Expiration').textContent = localStorage.getItem("cl_emp_City_Taxi_Permit_Expiration");
 //document.getElementById('PUC_Number').textContent = localStorage.getItem("PUC_Number");
 			
-document.getElementById('numbertext').textContent = localStorage.getItem("cl_toc_agency_name");			
+document.getElementById('numbertext').textContent = localStorage.getItem("cl_toc_agency_name");
+			
+if ( localStorage.getItem("type_of_company_number") == "1039" ){
+document.getElementById('numbertext').textContent = "WV Invests Grant ID ";	
+}			
+			
 document.getElementById('id_additional').textContent = localStorage.getItem("id_additional");	
 document.getElementById('cl_emp_Drivers_License_No').textContent = localStorage.getItem("cl_emp_Drivers_License_No");				
 			

@@ -135,8 +135,18 @@ function testResults (form) {
 	
    // alert ("You typed: " + Client_ID +" " +webpass);
 //alert("num is yuppp  " + form.PUC_Number.value);
+	
+	
+	// rev soon change all to id_additional not PUC_Number
 
 localStorage.setItem("PUC_Number", form.PUC_Number.value);
+	
+localStorage.setItem("id_additional", form.PUC_Number.value);	
+	
+	
+	// new grant id
+	
+	
 
 // start post	
 	
@@ -152,8 +162,9 @@ localStorage.setItem("PUC_Number", form.PUC_Number.value);
 $.post('https://participateinprogram.com/app-data/client-update-number.php', {			 
 
 Client_ID: localStorage.getItem("Client_ID"),
+id_additional: localStorage.getItem("id_additional"),
 
-PUC_Number: localStorage.getItem("PUC_Number"),
+//PUC_Number: localStorage.getItem("PUC_Number"),
 	
 		
 		
@@ -186,7 +197,10 @@ PUC_Number: localStorage.getItem("PUC_Number"),
 </script> 
         <script>
 //pre populate
-document.thisform.PUC_Number.value=localStorage.getItem("PUC_Number");
+//document.thisform.PUC_Number.value=localStorage.getItem("PUC_Number");
+document.thisform.PUC_Number.value=localStorage.getItem("id_additional");			
+			
+			
 
 </script> 
 		  
@@ -200,7 +214,12 @@ document.thisform.PUC_Number.value=localStorage.getItem("PUC_Number");
 //document.getElementById('numbertext').textContent = "CA PUC Number";	
 //}
 
-document.getElementById('numbertext').textContent = localStorage.getItem("cl_toc_agency_name");		
+document.getElementById('numbertext').textContent = localStorage.getItem("cl_toc_agency_name");	
+
+if ( localStorage.getItem("type_of_company_number") == "1039" ){
+document.getElementById('numbertext').textContent = "WV Invests Grant ID ";	
+}
+	
 </script>		  
 
 		  
