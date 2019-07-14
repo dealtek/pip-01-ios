@@ -119,12 +119,16 @@ img.center {
     <br>
     <a class="buttonlink7" href="client-update-address.html" rel="external"> <span class="bigfont2">Update My Address</span> </a> <br>
     <br>
-    <a class="buttonlink7tall" href="client-update-number.html" rel="external"> <span class="bigfont2">Edit 
+    <a class="buttonlink7" href="client-update-number.html" rel="external"> <span class="bigfont2">Edit 
 		
 		<span id="numbertext"></span> Number
 		
-		</span> </a> <br>
+		</span> </a>
     <br>
+	 <br>
+ 
+
+	  
     <a class="buttonlink7" href="client-contact-info.html" rel="external"> <span class="bigfont2">Show My Info</span> </a> <br>
     <br>
   </div>
@@ -135,8 +139,12 @@ img.center {
 //}else{
 //document.getElementById('numbertext').textContent = "CA PUC TCP Number";	
 //}
+	
+document.getElementById('numbertext').textContent = localStorage.getItem("cl_toc_agency_name");	
 
-document.getElementById('numbertext').textContent = localStorage.getItem("cl_toc_agency_name");		
+if ( localStorage.getItem("type_of_company_number") == "1039" ){
+document.getElementById('numbertext').textContent = "WV Invests Grant ID ";	
+}	
 
 </script>
 	
