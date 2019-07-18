@@ -1,5 +1,5 @@
-IDC APP
+Participate In Program APP
 
 ======
 
-IDC APP - The Independent Drivers Consortium - Drug Free
+Participate In Program APP - A Substance Abuse Screening Program To Monitor Compliance - Drug Free
