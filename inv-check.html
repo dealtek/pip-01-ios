@@ -88,6 +88,38 @@ Client_ID: Client_ID,
 function(data, status){
 	
 	
+	
+	
+	// new start
+	
+	var foundzerocheck = data.indexOf("foundzero");
+	console.log ('the foundzerocheck  ', foundzerocheck);	
+	
+	localStorage.setItem("last_invoice", "nothing");
+	
+	if (
+
+//so it did findzero true
+	foundzerocheck > -1
+){
+		
+	}else{
+		
+		
+	
+	
+	
+	
+	
+	
+		// new end
+	
+	
+	
+	
+	
+	
+	
 // rev will keep this for now for dashboard
 localStorage.setItem("last_invoice", "InvoiceFound");	
 	
@@ -109,6 +141,11 @@ localStorage.setItem("invoice_due", value.invoice_due);
 	
 });
 
+	
+	
+// add here	
+		}//  end foundzerocheck
+	
 
 //rev last_invoice not great but works - better may be JS result not text
 //alert("data is "+ data.trim());	

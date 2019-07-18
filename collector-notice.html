@@ -217,6 +217,9 @@ fedtype is <span id="fedtype"></span>
 				  
 				  				  Test: <span id="showtesttype"></span><br><br> 
 					Panel Number: <span id="ev_pan_num"></span><br><br>
+				  
+				  <span id="ev_profile"></span><br><br>
+				  
 					Desc: <span id="ev_desc"></span><br>
 				  
 				  
@@ -342,6 +345,9 @@ $("#showtext3").show(); // no test req
 var owner_CompanyEXTRA  = "West Virginia Higher Education Policy Commission/West Virginia Community and Technical College System<br>";	
 		
 		document.getElementById('cl_toc_owner_CompanyEXTRA').innerHTML = owner_CompanyEXTRA;
+		
+		
+		document.getElementById('ev_profile').textContent = 'Electronic CCF Profile 15';
 	}
 	
 			
@@ -357,6 +363,8 @@ var owner_CompanyEXTRA  = "West Virginia Higher Education Policy Commission/West
 			//document.getElementById('ev_TestType').textContent = localStorage.getItem("ev_TestType");
 			document.getElementById('ev_pan_num').textContent = localStorage.getItem("ev_pan_num");
 			document.getElementById('ev_desc').textContent = localStorage.getItem("ev_desc");
+	
+	
 			
 			
 

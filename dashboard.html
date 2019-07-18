@@ -1235,40 +1235,31 @@ $("#rt_completecheck").hide(0);
 	
 	
 // this for 1039 put at bottom
-	if(
-		
-		localStorage.getItem("last_invoice") == "InvoiceFound"
-	){
-		
-		
-		
-		
-		
-		// after pay so ok to hide
-		$("#pre_emp_completecheck").hide(1);
-		
-		
-		$("#showreceipt").hide(1);
-		$("#showreceipt").show(1);
-		$("#collect_notice").show(1);
-	   console.log('last_invoice' + localStorage.getItem("last_invoice") );
-	   
-	   }else{
-		  
-		 $("#showreceipt").hide(1); 
-		   $("#collect_notice").hide(1); 
-		   
-		   
-	   }	
+if(
+
+localStorage.getItem("last_invoice") == "InvoiceFound"
+){
+
+
+// after pay so ok to hide
+$("#pre_emp_completecheck").hide(1);
+
+
+$("#showreceipt").hide(1);
+$("#showreceipt").show(1);
+$("#collect_notice").show(1);
+console.log('last_invoice' + localStorage.getItem("last_invoice") );
+
+}else{
+
+$("#showreceipt").hide(1); 
+$("#collect_notice").hide(1); 
+
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+}	
+
 	
 // end 1039
 	
@@ -1291,9 +1282,24 @@ localStorage.getItem("type_of_company_number") == "1039"
   ){
   //show need test
   $("#pre_emp_completecheck2").show(1); 
+	  
+	  
+if( localStorage.getItem("last_invoice") != "InvoiceFound"
+){
+	// try this so no doubles if not paid yet
+$("#pre_emp_completecheck2").hide(1); 	 
+	  }	  
+	  
+	  
+	  
   }	else{
   //no show
   $("#pre_emp_completecheck2").hide(1); 
+	  
+
+
+	  
+	  
   }
 
 }//end if
