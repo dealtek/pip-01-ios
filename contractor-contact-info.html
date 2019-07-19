@@ -377,7 +377,9 @@ if(
 localStorage.getItem("pre_emp_completecheck").trim() == "foundzero"
 ){
 
-document.getElementById('mess-em-test').innerHTML = "<br>You can not send email test results until you have a test.<br>Click on Collection Sites button find a testing site.</b><br><a rel=\"external\" class=\"buttonlink2\" href=\"collection-sites1.html\" >Collection Sites</a><br>";
+document.getElementById('mess-em-test').innerHTML = "<br>Email test results will not be sent until you have a test.<br>";
+	
+//document.getElementById('mess-em-test').innerHTML = "<br>You can not send email test results until you have a test.<br>Click on Collection Sites button find a testing site.</b><br><a rel=\"external\" class=\"buttonlink2\" href=\"collection-sites1.html\" >Collection Sites</a><br>";	
 		
 $("#mess-em-test").show(1000);	
 		
